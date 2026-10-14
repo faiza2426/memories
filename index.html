@@ -18,12 +18,12 @@
         #particle-canvas { position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.6; }
 
         /* High-End Intro Screen */
-        #intro { position: fixed; inset: 0; background: radial-gradient(circle, #111 0%, #000 100%); z-index: 9999; display: flex; align-items: center; justify-content: center; flex-direction: column; transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s; }
+        #intro { position: fixed; inset: 0; background: radial-gradient(circle, #111 0%, #000 100%); z-index: 9999; display: flex; align-items: center; justify-content: center; flex-direction: column; transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.6s; }
         #intro.hide { transform: translateY(-100%); opacity: 0; pointer-events: none; }
         .m-logo { font-family: 'Bebas Neue'; font-size: 220px; color: #E50914; font-weight: 900; letter-spacing: -10px; transform: scale(0); animation: mIn 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards; text-shadow: 0 0 50px rgba(229,9,20,0.4); }
         @keyframes mIn { 0% { transform: scale(0) rotate(-15deg); } 70% { transform: scale(1.05) rotate(2deg); } 100% { transform: scale(1) rotate(0); } }
         .intro-txt { letter-spacing: 15px; color: #aaa; font-size: 14px; margin-top: 10px; opacity: 0; animation: fade 1s forwards 1.2s; font-weight: 300; }
-        .enter-btn { margin-top: 40px; padding: 12px 30px; background: transparent; border: 1px solid #E50914; color: #fff; letter-spacing: 4px; font-size: 11px; cursor: pointer; border-radius: 50px; transition: 0.4s; opacity: 0; animation: fade 1s forwards 1.5s; }
+        .enter-btn { margin-top: 40px; padding: 12px 30px; background: transparent; border: 1px solid #E50914; color: #fff; letter-spacing: 4px; font-size: 11px; cursor: pointer; border-radius: 50px; transition: 0.4s; opacity: 0; animation: fade 1s forwards 1.5s; z-index: 10000; position: relative; }
         .enter-btn:hover { background: #E50914; box-shadow: 0 0 20px #E50914; transform: scale(1.05); }
         @keyframes fade { to { opacity: 1; } }
 
@@ -89,8 +89,8 @@
     <!-- Background Cinematic Hearts -->
     <canvas id="particle-canvas"></canvas>
 
-    <!-- Background Music (Replace the URL with your own song link if needed) -->
-    <audio id="bg-music" src="https://soundhelix.com" loop></audio>
+    <!-- Background Music (Using a highly reliable public server stream link) -->
+    <audio id="bg-music" src="https://zeno.fm" preload="auto" loop crossorigin="anonymous"></audio>
 
     <!-- Intro Screen -->
     <div id="intro">
@@ -109,4 +109,3 @@
     <div class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
-            <div class="badge">✦ Special Premiere • Birthday Special</div>
