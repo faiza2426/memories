@@ -2,87 +2,116 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MEMORIES - For Maryam | Premium</title>
+<title>For Maryam - Premium Surprise</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#050505;color:#fff;font-family:'Poppins',sans-serif;overflow-x:hidden}
-.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;background:radial-gradient(ellipse at center, #1a0a0a 0%, #000 60%);}
-.hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1519741497674-611481863552') center/cover;opacity:0.15;filter:blur(2px)}
-.hero-content{position:relative;z-index:2}
-.hero h4{letter-spacing:6px;opacity:0.6;font-weight:300}
-.hero h1{font-family:'Playfair Display';font-size:5rem;line-height:1}
-.hero h1 span{color:#E50914;text-shadow:0 0 30px #E50914}
-.btn-premium{margin-top:35px;padding:14px 40px;background:#E50914;border-radius:50px;border:none;color:#fff;font-weight:600;letter-spacing:1px;cursor:pointer;box-shadow:0 0 30px rgba(229,9,20,0.5);transition:.3s}
-.btn-premium:hover{transform:scale(1.08);box-shadow:0 0 50px rgba(229,9,20,0.8)}
-.section{max-width:1200px;margin:auto;padding:100px 20px}
-.title{font-family:'Playfair Display';font-size:3.2rem;text-align:center}
-.sub{opacity:.4;text-align:center;margin:10px 0 60px;letter-spacing:2px}
-.wishes{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
-.wish-card{background:linear-gradient(145deg,#111,#0a0a0a);border:1px solid #222;border-radius:20px;padding:35px;transition:.4s;position:relative;overflow:hidden}
-.wish-card:hover{transform:translateY(-8px);border-color:#E50914}
-.wish-card h3{color:#E50914;margin-bottom:10px}
-.wish-card p{opacity:.8;line-height:1.7}
-.vault-btn-wrap{text-align:center;margin-top:70px}
-.vault{background:#080808;border-top:1px solid #1a1a1a;padding:100px 20px}
-.video-vault{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;max-width:1200px;margin:40px auto 0}
-.video-card{background:#111;border:1px solid #222;border-radius:16px;overflow:hidden;transition:.3s}
-.video-card:hover{border-color:#E50914;transform:scale(1.02)}
-.video-card video{width:100%;height:200px;object-fit:cover;background:#000}
-.video-card .cap{padding:12px 15px;font-size:.9rem;opacity:.7}
-.lock{width:70px;height:70px;margin:0 auto 20px;border:2px solid #E50914;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 0 20px #E50914}
+*{margin:0;padding:0;box-sizing:border-box}body{background:#050505;color:#fff;font-family:'Poppins';overflow-x:hidden}
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;background:radial-gradient(circle at center,#1a0a0a 0%,#000 70%);position:relative}
+.hero h1{font-family:'Playfair Display';font-size:4.5rem} .hero h1 span{color:#E50914;text-shadow:0 0 25px #E50914}
+.type{opacity:.7;letter-spacing:4px;margin-top:10px;font-size:1rem;min-height:25px}
+.btn{margin-top:30px;padding:14px 38px;background:#E50914;border:none;border-radius:30px;color:#fff;font-weight:600;cursor:pointer;box-shadow:0 0 25px rgba(229,9,20,.6);transition:.3s}
+.btn:hover{transform:scale(1.07)}
+.section{max-width:1200px;margin:auto;padding:90px 20px}
+.title{font-family:'Playfair Display';font-size:3rem;text-align:center} .sub{text-align:center;opacity:.4;letter-spacing:3px;margin-bottom:50px}
+/* FLIP CARD - DONO KI PIC */
+.flip-wrap{display:flex;justify-content:center;margin-top:30px}
+.flip-card{width:350px;height:500px;perspective:1000px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:.8s;transform-style:preserve-3d}
+.flip-card:hover .flip-inner{transform:rotateY(180deg)}
+.flip-front,.flip-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:20px;overflow:hidden;border:1px solid #222}
+.flip-front{background:#111;display:flex;flex-direction:column}
+.flip-front img{width:100%;height:80%;object-fit:cover} .flip-front .txt{padding:15px;text-align:center}
+.flip-back{background:linear-gradient(145deg,#111,#1a0a0a);transform:rotateY(180deg);padding:30px;display:flex;flex-direction:column;justify-content:center}
+.flip-back img{width:100px;height:100px;border-radius:50%;object-fit:cover;margin:0 auto 15px;border:2px solid #E50914}
+/* ENVELOPE */
+.envelope{width:400px;max-width:90%;margin:30px auto;background:#111;border-radius:15px;padding:0;overflow:hidden;border:1px solid #222;text-align:center;transition:.4s}
+.envelope .top{background:#E50914;padding:15px;cursor:pointer} .envelope .letter{padding:30px;display:none;line-height:1.8;opacity:.85}
+/* GIFT & SCRATCH */
+.gift-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:20px}
+.gift-box{background:#111;border:1px solid #222;border-radius:20px;padding:30px;text-align:center;cursor:pointer;transition:.3s}
+.gift-box:hover{border-color:#E50914;transform:translateY(-5px)} .gift-box span{font-size:40px}
+.scratch{background:#141414;border-radius:15px;padding:20px;text-align:center;border:1px dashed #333}
+.cake-wrap{text-align:center;margin-top:30px} .cake{font-size:100px;cursor:pointer;animation:float 3s infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+/* VAULT */
+.vault{background:#080808;border-top:1px solid #1a1a1a;padding:100px 20px;margin-top:80px}
+.vid-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;max-width:1200px;margin:40px auto}
+.vid{background:#111;border:1px solid #222;border-radius:15px;overflow:hidden} .vid video{width:100%;height:200px;background:#000} .vid .c{padding:10px;opacity:.6;font-size:.85rem}
 </style>
 </head>
 <body>
 
 <div class="hero">
-  <div class="hero-content">
-    <h4>FOR SOMEONE SPECIAL</h4>
-    <h1>HAPPY BIRTHDAY<br><span>MARYAM</span></h1>
-    <p style="margin-top:15px;opacity:.6">Scroll down for your surprise</p>
-    <button class="btn-premium" onclick="document.getElementById('wishes').scrollIntoView({behavior:'smooth'})">START JOURNEY</button>
+  <h4 style="letter-spacing:6px;opacity:.5">A PREMIUM SURPRISE FOR</h4>
+  <h1>MARYAM <span>MEMORIES</span></h1>
+  <div class="type" id="type"></div>
+  <button class="btn" onclick="document.getElementById('card').scrollIntoView({behavior:'smooth'})">Open Your Birthday</button>
+</div>
+
+<div class="section" id="card">
+  <h2 class="title">Your Birthday Card</h2><p class="sub">HOVER TO FLIP</p>
+  <div class="flip-wrap">
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="Maryam">
+          <div class="txt"><h3>For Maryam</h3><p style="opacity:.5">Tap & Hold</p></div>
+        </div>
+        <div class="flip-back">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="Faiza">
+          <h3 style="text-align:center">From Faiza ❤️</h3>
+          <p style="margin-top:15px;opacity:.8">Meri pyaari Maryam, tum meri zindagi ka sab se khoobsurat hissa ho. Allah tumhe hamesha khush rakhe. Ye card sirf hum dono ke naam hai.</p>
+          <p style="margin-top:15px;color:#E50914;font-weight:600">Happy Birthday!</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="section" id="wishes">
-  <h2 class="title">Birthday Wishes</h2>
-  <p class="sub">WORDS FROM THE HEART</p>
-  <div class="wishes">
-    <div class="wish-card"><h3>🎂 My Dearest Maryam</h3><p>Allah tumhe lambi zindagi, dher sari khushiyan aur har kamyabi de. Tum meri sab se pyari yaad ho.</p></div>
-    <div class="wish-card"><h3>✨ You Are Special</h3><p>Tumhari jaisi dost kismat se milti hai. Tumhari muskurahat hi kaafi hai dil khush karne ke liye.</p></div>
-    <div class="wish-card"><h3>❤️ Always With You</h3><p>Chahe kuch bhi ho, Faiza hamesha tumhare sath hai. Happy Birthday meri jaan!</p></div>
-    <div class="wish-card"><h3>🌙 My Dua</h3><p>Allah har buri nazar se bachaye, har dua qabool kare. Tum hamesha chamakti raho.</p></div>
-    <div class="wish-card"><h3>💫 Forever Memories</h3><p>Ye jo humari memories hain na, ye zindagi bhar ka khazana hain.</p></div>
-    <div class="wish-card"><h3>🎁 Your Gift</h3><p>Niche maine tumhare liye ek secret vault banaya hai, sirf tumhare liye.</p></div>
+<div class="section">
+  <h2 class="title">Surprises For You</h2><p class="sub">CLICK TO UNLOCK</p>
+  <div class="envelope" id="env">
+    <div class="top" onclick="document.querySelector('.letter').style.display='block'">💌 CLICK TO OPEN LETTER</div>
+    <div class="letter">
+      Dearest Maryam,<br><br>
+      Tum meri best memory ho. Har hasi, har baat yaad hai. Tumhari dosti anmol hai. Allah tumhari har khwahish poori kare. Tum hamesha aise hi chamakti raho meri jaan.<br><br>
+      <b>- Faiza</b>
+    </div>
   </div>
-  <div class="vault-btn-wrap">
-    <button class="btn-premium" onclick="document.getElementById('vault').scrollIntoView({behavior:'smooth'})">🔓 OPEN MEMORIES VAULT (15 Videos)</button>
+  <div class="gift-grid">
+    <div class="gift-box" onclick="alert('🎉 Surprise: Tumhe ek pyaara sa gift milega!')"><span>🎁</span><h3>Mystery Gift</h3><p style="opacity:.5">Click to open</p></div>
+    <div class="gift-box" onclick="alert('🎂 Blow the cake below!')"><span>🎂</span><h3>Birthday Cake</h3><p style="opacity:.5">Click for wish</p></div>
+    <div class="gift-box"><span>✨</span><h3>Scratch Card</h3><p class="scratch">Scratch: YOU ARE MY BEST FRIEND ❤️</p></div>
+    <div class="gift-box" onclick="document.getElementById('vault').scrollIntoView({behavior:'smooth'})"><span>🔒</span><h3>Memories Vault</h3><p style="opacity:.5">15 Videos inside</p></div>
   </div>
+  <div class="cake-wrap"><div class="cake" onclick="this.innerHTML='🎂💨'; alert('Make a wish Maryam! ✨')">🎂</div><p style="opacity:.4;margin-top:10px">Cake pe click karo - blow the candles!</p></div>
 </div>
 
 <div class="vault" id="vault">
-  <div class="lock">🔒</div>
-  <h2 class="title">MEMORIES VAULT</h2>
-  <p class="sub">15 VIDEOS • ONLY FOR MARYAM</p>
-  <div class="video-vault">
-    <div class="video-card"><video controls><source src="video1.mp4"></video><div class="cap">Memory #01</div></div>
-    <div class="video-card"><video controls><source src="video2.mp4"></video><div class="cap">Memory #02</div></div>
-    <div class="video-card"><video controls><source src="video3.mp4"></video><div class="cap">Memory #03</div></div>
-    <div class="video-card"><video controls><source src="video4.mp4"></video><div class="cap">Memory #04</div></div>
-    <div class="video-card"><video controls><source src="video5.mp4"></video><div class="cap">Memory #05</div></div>
-    <div class="video-card"><video controls><source src="video6.mp4"></video><div class="cap">Memory #06</div></div>
-    <div class="video-card"><video controls><source src="video7.mp4"></video><div class="cap">Memory #07</div></div>
-    <div class="video-card"><video controls><source src="video8.mp4"></video><div class="cap">Memory #08</div></div>
-    <div class="video-card"><video controls><source src="video9.mp4"></video><div class="cap">Memory #09</div></div>
-    <div class="video-card"><video controls><source src="video10.mp4"></video><div class="cap">Memory #10</div></div>
-    <div class="video-card"><video controls><source src="video11.mp4"></video><div class="cap">Memory #11</div></div>
-    <div class="video-card"><video controls><source src="video12.mp4"></video><div class="cap">Memory #12</div></div>
-    <div class="video-card"><video controls><source src="video13.mp4"></video><div class="cap">Memory #13</div></div>
-    <div class="video-card"><video controls><source src="video14.mp4"></video><div class="cap">Memory #14</div></div>
-    <div class="video-card"><video controls><source src="video15.mp4"></video><div class="cap">Memory #15 - Final Surprise</div></div>
+  <h2 class="title">🔓 MEMORIES VAULT</h2><p class="sub">LAST SURPRISE - 15 VIDEOS ONLY FOR YOU</p>
+  <div class="vid-grid">
+    <div class="vid"><video controls src="video1.mp4"></video><div class="c">Memory #01</div></div>
+    <div class="vid"><video controls src="video2.mp4"></video><div class="c">Memory #02</div></div>
+    <div class="vid"><video controls src="video3.mp4"></video><div class="c">Memory #03</div></div>
+    <div class="vid"><video controls src="video4.mp4"></video><div class="c">Memory #04</div></div>
+    <div class="vid"><video controls src="video5.mp4"></video><div class="c">Memory #05</div></div>
+    <div class="vid"><video controls src="video6.mp4"></video><div class="c">Memory #06</div></div>
+    <div class="vid"><video controls src="video7.mp4"></video><div class="c">Memory #07</div></div>
+    <div class="vid"><video controls src="video8.mp4"></video><div class="c">Memory #08</div></div>
+    <div class="vid"><video controls src="video9.mp4"></video><div class="c">Memory #09</div></div>
+    <div class="vid"><video controls src="video10.mp4"></video><div class="c">Memory #10</div></div>
+    <div class="vid"><video controls src="video11.mp4"></video><div class="c">Memory #11</div></div>
+    <div class="vid"><video controls src="video12.mp4"></video><div class="c">Memory #12</div></div>
+    <div class="vid"><video controls src="video13.mp4"></video><div class="c">Memory #13</div></div>
+    <div class="vid"><video controls src="video14.mp4"></video><div class="c">Memory #14</div></div>
+    <div class="vid"><video controls src="video15.mp4"></video><div class="c">Memory #15 - Final Surprise ❤️</div></div>
   </div>
-  <p style="text-align:center;margin-top:50px;opacity:.3">Made with ❤️ by Faiza</p>
+  <p style="text-align:center;margin-top:50px;opacity:.3">Made with ❤️ by Faiza - Professional Artist Level</p>
 </div>
 
+<script>
+const text="Happy Birthday Maryam, this is all for you...";let i=0;
+function typing(){if(i<text.length){document.getElementById('type').innerHTML+=text.charAt(i);i++;setTimeout(typing,70)}}typing();
+</script>
 </body>
 </html>
