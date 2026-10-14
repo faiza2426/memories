@@ -1,125 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MEMORIES - Maryam</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#000;color:#fff;font-family:'Inter',sans-serif;overflow-x:hidden}
-#intro{position:fixed;inset:0;background:#000;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:1s}
-#intro.hide{opacity:0;pointer-events:none}
-.m-logo{font-family:'Bebas Neue';font-size:180px;color:#E50914;font-weight:900;letter-spacing:-10px;transform:scale(0);animation:mIn 1.2s cubic-bezier(0.77,0,0.175,1) forwards}
-@keyframes mIn{0%{transform:scale(0) rotate(-10deg)}70%{transform:scale(1.1) rotate(2deg)}100%{transform:scale(1) rotate(0)}}
-.intro-txt{letter-spacing:12px;color:#333;font-size:12px;margin-top:10px;opacity:0;animation:fade 1s forwards 1s}
-@keyframes fade{to{opacity:1}}
-.header{position:fixed;top:0;width:100%;padding:18px 4%;display:flex;justify-content:space-between;align-items:center;z-index:100;background:linear-gradient(180deg,#000 0%, transparent 100%)}
-.logo{font-family:'Bebas Neue';font-size:38px;color:#E50914;letter-spacing:3px}
-.logo span{color:#fff;font-size:14px;letter-spacing:8px;margin-left:8px;vertical-align:middle;font-family:'Inter';font-weight:400}
-.profile{width:32px;height:32px;background:#E50914;border-radius:4px;display:flex;align-items:center;justify-content:center;font-weight:900}
-.hero{height:92vh;position:relative;display:flex;align-items:center;padding:0 4%;background:#000}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(77deg,rgba(0,0,0,1) 0%,rgba(0,0,0,0.6) 40%, transparent 80%), url('https://images.unsplash.com/photo-1518199266791-5375a83190b7');background-size:cover;background-position:center}
-.hero-content{position:relative;z-index:2;max-width:600px;margin-top:60px}
-.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(229,9,20,0.15);border:1px solid rgba(229,9,20,0.3);padding:5px 12px;border-radius:20px;font-size:10px;letter-spacing:2px;color:#E50914;margin-bottom:18px}
-.hero h1{font-size:72px;font-weight:900;line-height:0.9;letter-spacing:-2px}
-.hero h1 span{font-weight:400;font-size:22px;letter-spacing:8px;display:block;color:#999;margin-top:8px}
-.hero p{color:#999;font-size:14px;margin-top:18px;line-height:1.6;max-width:420px}
-.btns{display:flex;gap:12px;margin-top:28px}
-.btn{padding:14px 32px;border:none;border-radius:4px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px;transition:0.3s}
-.btn-white{background:#fff;color:#000}
-.btn-white:hover{background:rgba(255,255,255,0.8)}
-.btn-gray{background:rgba(109,109,110,0.7);color:#fff}
-.btn-gray:hover{background:rgba(109,109,110,0.4)}
-.row{padding:18px 0 0 4%;position:relative;z-index:3}
-.row-title{font-size:20px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.row-title small{font-size:10px;letter-spacing:3px;color:#666;font-weight:400}
-.slider{display:flex;gap:10px;overflow-x:auto;padding:5px 0 25px 0;scrollbar-width:none}
-.slider::-webkit-scrollbar{display:none}
-.card{min-width:290px;height:165px;background:#111;border-radius:6px;overflow:hidden;position:relative;cursor:pointer;transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);border:1px solid #1a1a1a}
-.card:hover{transform:scale(1.08) translateY(-10px);border-color:#333;z-index:10;box-shadow:0 20px 40px rgba(0,0,0,0.8)}
-.card img{width:100%;height:100%;object-fit:cover;transition:0.6s}
-.card:hover img{transform:scale(1.1);filter:brightness(1.1)}
-.card-top{position:absolute;top:8px;left:8px;background:#E50914;padding:2px 6px;font-size:9px;font-weight:700;border-radius:2px;letter-spacing:1px}
-.card-bottom{position:absolute;bottom:0;width:100%;padding:12px;background:linear-gradient(transparent,rgba(0,0,0,0.95))}
-.card-bottom h4{font-size:13px;font-weight:700}
-.card-bottom p{font-size:10px;color:#46d369;margin-top:3px;letter-spacing:1px}
-#modal{position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:500;display:none;align-items:center;justify-content:center;padding:4%}
-#modal.show{display:flex}
-.modal-box{width:100%;max-width:850px;background:#181818;border-radius:8px;overflow:hidden;animation:pop 0.4s}
-@keyframes pop{from{transform:scale(0.9);opacity:0}to{transform:scale(1);opacity:1}}
-.modal-img{height:45vh;background-size:cover;background-position:center;position:relative}
-.modal-close{position:absolute;top:15px;right:15px;background:#000;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMORIES - Maryam Premium Edition</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #050505; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; position: relative; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #E50914; border-radius: 10px; }
+
+        /* Background Particle Canvas */
+        #particle-canvas { position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.6; }
+
+        /* High-End Intro Screen */
+        #intro { position: fixed; inset: 0; background: radial-gradient(circle, #111 0%, #000 100%); z-index: 9999; display: flex; align-items: center; justify-content: center; flex-direction: column; transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s; }
+        #intro.hide { transform: translateY(-100%); opacity: 0; pointer-events: none; }
+        .m-logo { font-family: 'Bebas Neue'; font-size: 220px; color: #E50914; font-weight: 900; letter-spacing: -10px; transform: scale(0); animation: mIn 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards; text-shadow: 0 0 50px rgba(229,9,20,0.4); }
+        @keyframes mIn { 0% { transform: scale(0) rotate(-15deg); } 70% { transform: scale(1.05) rotate(2deg); } 100% { transform: scale(1) rotate(0); } }
+        .intro-txt { letter-spacing: 15px; color: #aaa; font-size: 14px; margin-top: 10px; opacity: 0; animation: fade 1s forwards 1.2s; font-weight: 300; }
+        .enter-btn { margin-top: 40px; padding: 12px 30px; background: transparent; border: 1px solid #E50914; color: #fff; letter-spacing: 4px; font-size: 11px; cursor: pointer; border-radius: 50px; transition: 0.4s; opacity: 0; animation: fade 1s forwards 1.5s; }
+        .enter-btn:hover { background: #E50914; box-shadow: 0 0 20px #E50914; transform: scale(1.05); }
+        @keyframes fade { to { opacity: 1; } }
+
+        /* Header */
+        .header { position: fixed; top: 0; width: 100%; padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, transparent 100%); }
+        .logo { font-family: 'Bebas Neue'; font-size: 42px; color: #E50914; letter-spacing: 3px; text-shadow: 0 0 10px rgba(229,9,20,0.3); }
+        .logo span { color: #fff; font-size: 12px; letter-spacing: 6px; margin-left: 10px; font-family: 'Inter'; font-weight: 300; border-left: 1px solid #333; padding-left: 10px; }
+        .profile { width: 38px; height: 38px; background: #E50914; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; box-shadow: 0 0 15px rgba(229,9,20,0.5); }
+
+        /* Luxury Hero Section */
+        .hero { height: 95vh; position: relative; display: flex; align-items: center; padding: 0 5%; background: #000; z-index: 2; }
+        .hero-bg { position: absolute; inset: 0; background: linear-gradient(75deg, rgba(5,5,5,1) 0%, rgba(5,5,5,0.7) 40%, transparent 90%), url('https://unsplash.com') no-repeat center/cover; opacity: 0.85; }
+        .hero-content { position: relative; z-index: 5; max-width: 650px; margin-top: 50px; }
+        .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(229,9,20,0.12); border: 1px solid rgba(229,9,20,0.4); padding: 6px 16px; border-radius: 20px; font-size: 11px; letter-spacing: 3px; color: #E50914; font-weight: 600; margin-bottom: 22px; text-transform: uppercase; }
+        .hero h1 { font-size: 80px; font-weight: 900; line-height: 0.85; letter-spacing: -3px; }
+        .hero h1 span { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; font-size: 28px; letter-spacing: 2px; display: block; color: #E50914; margin-top: 12px; text-shadow: 0 0 15px rgba(229,9,20,0.3); }
+        .hero p { color: #bbb; font-size: 15px; margin-top: 22px; line-height: 1.7; max-width: 480px; font-weight: 300; }
+        
+        /* Premium Buttons */
+        .btns { display: flex; gap: 15px; margin-top: 35px; }
+        .btn { padding: 15px 35px; border: none; border-radius: 5px; font-weight: 700; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); letter-spacing: 0.5px; }
+        .btn-white { background: #fff; color: #000; box-shadow: 0 4px 15px rgba(255,255,255,0.2); }
+        .btn-white:hover { background: #E50914; color: #fff; box-shadow: 0 5px 25px rgba(229,9,20,0.5); transform: translateY(-2px); }
+        .btn-gray { background: rgba(255,255,255,0.1); color: #fff; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .btn-gray:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); border-color: rgba(255,255,255,0.3); }
+
+        /* Cinematic Rows & Cards */
+        .row { padding: 30px 0 0 5%; position: relative; z-index: 5; }
+        .row-title { font-size: 22px; font-weight: 700; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; letter-spacing: 0.5px; }
+        .row-title small { font-size: 11px; letter-spacing: 4px; color: #555; font-weight: 500; text-transform: uppercase; }
+        .slider { display: flex; gap: 14px; overflow-x: auto; padding: 10px 0 35px 0; scrollbar-width: none; }
+        .slider::-webkit-scrollbar { display: none; }
+        
+        .card { min-width: 310px; height: 175px; background: #0f0f0f; border-radius: 8px; overflow: hidden; position: relative; cursor: pointer; transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); border: 1px solid #1a1a1a; }
+        .card:hover { transform: scale(1.08) translateY(-8px); border-color: #E50914; z-index: 10; box-shadow: 0 15px 35px rgba(229,9,20,0.3); }
+        .card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; filter: brightness(0.85); }
+        .card:hover img { transform: scale(1.12); filter: brightness(1.05); }
+        .card-top { position: absolute; top: 10px; left: 10px; background: #E50914; padding: 3px 8px; font-size: 9px; font-weight: 700; border-radius: 3px; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+        .card-bottom { position: absolute; bottom: 0; width: 100%; padding: 15px; background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 60%, transparent 100%); }
+        .card-bottom h4 { font-size: 14px; font-weight: 600; letter-spacing: 0.3px; }
+        .card-bottom p { font-size: 11px; color: #46d369; margin-top: 5px; font-weight: 600; display: flex; align-items: center; gap: 5px; }
+
+        /* Universal Premium Modals */
+        .modal { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.92); backdrop-filter: blur(12px); z-index: 10000; display: none; align-items: center; justify-content: center; padding: 4%; opacity: 0; transition: opacity 0.4s ease; }
+        .modal.show { display: flex; opacity: 1; }
+        .modal-box { width: 100%; max-width: 800px; background: #141414; border-radius: 12px; overflow: hidden; transform: scale(0.9); transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); border: 1px solid #222; box-shadow: 0 25px 50px rgba(0,0,0,0.6); }
+        .modal.show .modal-box { transform: scale(1); }
+        .modal-img { height: 42vh; background-size: cover; background-position: center; position: relative; }
+        .modal-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, #141414 0%, transparent 60%); }
+        .modal-close { position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.2); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: 0.3s; font-size: 16px; }
+        .modal-close:hover { background: #E50914; border-color: #E50914; transform: rotate(90deg); }
+        
+        /* Gift Section Custom UI */
+        .gift-container { text-align: center; padding: 40px 20px; }
+        .gift-box { font-size: 80px; cursor: pointer; transition: transform 0.3s; animation: bounce 2s infinite; display: inline-block; }
+        .gift-box:hover { transform: scale(1.15); }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-20px); } 60% { transform: translateY(-10px); } }
+        .secret-letter { display: none; margin-top: 25px; padding: 25px; background: #1c1c1c; border-radius: 8px; border-left: 4px solid #E50914; text-align: left; font-size: 15px; line-height: 1.8; color: #ddd; font-style: italic; }
+    </style>
 </head>
 <body>
-<div id="intro" onclick="enter()">
-<div class="m-logo">M</div>
-<div class="intro-txt">MEMORIES</div>
-<div style="margin-top:30px;font-size:10px;letter-spacing:4px;color:#333">CLICK ANYWHERE TO ENTER</div>
-</div>
-<div class="header">
-<div class="logo">MEMORIES <span>ORIGINAL</span></div>
-<div class="profile">M</div>
-</div>
-<div class="hero">
-<div class="hero-bg"></div>
-<div class="hero-content">
-<div class="badge">● TOP 1 • MEMORIES ORIGINAL</div>
-<h1>MARYAM <span>HAPPY BIRTHDAY 18 OCT</span></h1>
-<p>A premium collection of 15 unforgettable moments. Curated with love. Click to play your story. Dark, cinematic, made only for you.</p>
-<div class="btns">
-<button class="btn btn-white" onclick="document.getElementById('row1').scrollIntoView({behavior:'smooth'})">▶ Play</button>
-<button class="btn btn-gray">ⓘ More Info</button>
-</div>
-</div>
-</div>
-<div class="row" id="row1">
-<div class="row-title">Continue Watching for Maryam <small>15 EPISODES</small></div>
-<div class="slider" id="s1"></div>
-</div>
-<div class="row">
-<div class="row-title">Top 10 Memories Today <small>IN PAKISTAN</small></div>
-<div class="slider" id="s2"></div>
-</div>
-<div class="row">
-<div class="row-title">Because You Watched Your Smile <small>PREMIUM</small></div>
-<div class="slider" id="s3"></div>
-</div>
-<div id="modal" onclick="this.classList.remove('show')">
-<div class="modal-box" onclick="event.stopPropagation()">
-<div class="modal-img" id="mImg" style="background-image:url('https://picsum.photos/seed/1/800/500')">
-<div class="modal-close" onclick="document.getElementById('modal').classList.remove('show')">✕</div>
-<div style="position:absolute;bottom:20px;left:25px">
-<div style="font-size:28px;font-weight:900" id="mTitle">Memory 01</div>
-<div style="font-size:12px;color:#46d369;margin-top:5px">98% Match • 18 Oct • HD • Replace with your video</div>
-</div>
-</div>
-<div style="padding:20px">
-<p style="font-size:13px;color:#999;line-height:1.6">Yahan apni video ya photo lagao. Ye premium modal hai - jab Maryam card pe click karegi to ye khulega.</p>
-<button class="btn btn-white" style="margin-top:15px">▶ Play Memory</button>
-</div>
-</div>
-</div>
-<script>
-function enter(){document.getElementById('intro').classList.add('hide')}
-const data=[
-{t:"First Meet - The Beginning",tag:"NEW"},{t:"Eid Day With You",tag:"TOP 10"},{t:"Long Drive Talks",tag:"HD"},
-{t:"Your Beautiful Smile",tag:"98% Match"},{t:"M Pendant Gift",tag:"NEW"},{t:"Late Night Video Call",tag:"TOP 10"},
-{t:"Birthday 2024",tag:"HD"},{t:"Our Best Photo",tag:"NEW"},{t:"Surprise For You",tag:"98% Match"},
-{t:"Best Day Ever",tag:"TOP 10"},{t:"Yaadgaar Lamha",tag:"HD"},{t:"Forever Us",tag:"NEW"},
-{t:"Tum Aur Main",tag:"98% Match"},{t:"Love Story",tag:"TOP 10"},{t:"Happy Birthday Maryam ❤️",tag:"FINALE"}
-];
-function makeRow(id, start){
-let s=document.getElementById(id);
-data.slice(start,start+8).forEach((m,i)=>{
-let d=document.createElement('div');d.className='card';
-d.innerHTML=`<div class="card-top">${m.tag}</div><img src="https://picsum.photos/seed/${start+i+20}/400/250"><div class="card-bottom"><h4>${m.t}</h4><p>▶ Click to play</p></div>`;
-d.onclick=()=>{document.getElementById('modal').classList.add('show');document.getElementById('mTitle').innerText=m.t;document.getElementById('mImg').style.backgroundImage=`url('https://picsum.photos/seed/${start+i+20}/800/500)`};
-s.appendChild(d);
-});
-}
-makeRow('s1',0);makeRow('s2',5);makeRow('s3',10);
-</script>
-</body>
-</html>
+
+    <!-- Background Cinematic Hearts -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Background Music (Replace the URL with your own song link if needed) -->
+    <audio id="bg-music" src="https://soundhelix.com" loop></audio>
+
+    <!-- Intro Screen -->
+    <div id="intro">
+        <div class="m-logo">M</div>
+        <div class="intro-txt">MEMORIES ORIGINAL PRESENTS</div>
+        <button class="enter-btn" onclick="enterExperience()">UNLOCK THE STORY</button>
+    </div>
+
+    <!-- Header Navigation -->
+    <div class="header">
+        <div class="logo">MEMORIES <span>PREMIUM</span></div>
+        <div class="profile">M</div>
+    </div>
+
+    <!-- Luxury Hero Section -->
+    <div class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="badge">✦ Special Premiere • Birthday Special</div>
