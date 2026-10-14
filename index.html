@@ -2,133 +2,133 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Maryam - 18 October</title>
+<title>18 October - For Maryam</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{background:#07070a;color:#fff;font-family:'Poppins',sans-serif;overflow-x:hidden}
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle at top,#2a1220,#07070a 60%)}
-.hero h1{font-family:'Playfair Display';font-size:3.8rem}.hero h1 span{color:#E50914}
-.count{display:flex;gap:15px;margin:20px 0}.count div{background:#111;border:1px solid #222;padding:15px;border-radius:12px;min-width:70px}
-.count div b{font-size:1.6rem;color:#E50914;display:block}
-.btn{padding:14px 36px;background:linear-gradient(90deg,#E50914,#ff3b3b);border:none;border-radius:30px;color:#fff;font-weight:600;cursor:pointer;box-shadow:0 8px 20px rgba(229,9,20,.3)}
-.card{max-width:900px;margin:40px auto;background:#111;border:1px solid #1e1e1e;border-radius:20px;padding:25px}
-.calendar{width:280px;margin:20px auto;background:#fff;color:#111;border-radius:16px;padding:15px;text-align:center}
-.calendar.head{background:#E50914;color:#fff;padding:10px;border-radius:10px;font-weight:700}
-.calendar.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:12px;font-size:.9rem}
-.calendar.days div{padding:8px;border-radius:8px}.calendar.heart{background:#E50914;color:#fff;position:relative}
-.calendar.heart::after{content:'❤️';position:absolute;top:-12px;right:-6px}
-/* CAKE PERFECT */
-.cake-area{position:relative;width:240px;margin:80px auto 0}
-.cake-base{width:100%;height:130px;background:linear-gradient(#ff9fb0,#ff5a7a);border-radius:12px 12px 6px 6px;position:relative;box-shadow:inset 0 -10px #c23a50}
-.candles{position:absolute;top:-38px;left:50%;transform:translateX(-50%);display:flex;gap:14px}
-.candle{width:14px;height:38px;background:linear-gradient(#fff,#ffd6d6);border-radius:6px;position:relative;cursor:pointer}
-.candle::before{content:'🔥';position:absolute;top:-20px;left:50%;transform:translateX(-50%)}.candle.off::before{content:'💨';top:-18px}
-.candle.off{background:#444;opacity:.6}
-/* SCRATCH DARK */
-.scratch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:20px}
-.s-card{position:relative;height:160px;background:#0f0f14;border:1px solid #222;border-radius:16px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:15px;text-align:center;color:#ffde9b}
-.s-card canvas{position:absolute;inset:0;cursor:grab}
-/* FOLDERS PREMIUM */
-.folders{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:20px}
-.folder{height:150px;background:linear-gradient(135deg,#1a1a22,#101015);border:1px solid #262632;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:.3s}
-.folder:hover{transform:translateY(-5px);border-color:#E50914}
-.folder span{font-size:2.8rem}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:99;padding:15px}
-.modal.active{display:flex}
-.box{background:#12121a;border:1px solid #222;padding:20px;border-radius:18px;width:100%;max-width:800px;max-height:85vh;overflow:auto}
-.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-video{width:100%;border-radius:10px;background:#000}
-#tease{position:fixed;inset:0;background:#050507;z-index:9999;display:flex;align-items:center;justify-content:center}
-.tbox{background:#111;border:1px solid #E50914;padding:28px;border-radius:18px;text-align:center;width:90%;max-width:360px}
+*{margin:0;padding:0;box-sizing:border-box}body{background:#08080c;color:#fff;font-family:'Poppins'}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(at top,#2a1220,#08080c 70%)}
+h1{font-family:'Playfair Display';font-size:3.5rem}h1 span{color:#E50914}
+.btn{padding:13px 32px;background:linear-gradient(90deg,#E50914,#ff3b55);border:none;border-radius:30px;color:#fff;font-weight:600;cursor:pointer}
+.card{max-width:900px;margin:35px auto;background:#12121a;border:1px solid #1e1e28;border-radius:20px;padding:22px}
+/* REAL CALENDAR */
+.real-cal{width:320px;margin:20px auto;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.real-cal-head{background:#E50914;color:#fff;padding:14px;text-align:center;font-weight:700;display:flex;justify-content:space-between;padding-left:20px;padding-right:20px}
+.real-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;padding:12px;color:#111;font-size:.9rem;gap:4px}
+.real-cal-grid.day-name{font-weight:700;opacity:.5;font-size:.75rem}
+.real-cal-grid.date{padding:10px;border-radius:10px}.real-cal-grid.heart{ background:#E50914;color:#fff; font-weight:700; position:relative; animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+/* CAKE PREMIUM */
+.cake-wrap{position:relative;width:260px;margin:90px auto 20px}
+.cake-layer1{width:260px;height:90px;background:linear-gradient(#fff0f3,#ffb3c1);border-radius:14px 14px 8px 8px;position:relative;box-shadow:0 8px 0 #d65a72}
+.cake-layer1::after{content:'';position:absolute;bottom:-12px;left:10px;right:10px;height:22px;background:linear-gradient(#fff,#ffd1d9);border-radius:0 0 20px 20px;clip-path:polygon(0 0,100% 0,100% 30%,90% 60%,80% 20%,70% 70%,60% 25%,50% 60%,40% 20%,30% 65%,20% 25%,10% 60%,0 30%)}
+.cake-layer2{width:200px;height:70px;background:linear-gradient(#ff8fa3,#ff4d6d);margin:-8px auto 0;border-radius:10px;position:relative}
+.candles-row{position:absolute;top:-44px;left:50%;transform:translateX(-50%);display:flex;gap:16px}
+.candle{width:14px;height:42px;background:repeating-linear-gradient(45deg,#fff,#fff 4px,#ffde9b 4px,#ffde9b 8px);border-radius:6px;cursor:pointer;position:relative}
+.candle::before{content:'🔥';position:absolute;top:-22px;left:50%;transform:translateX(-50%)}.candle.off::before{content:'💨'}.candle.off{filter:grayscale(1);opacity:.5}
+/* SCRATCH PREMIUM DARK */
+.scratch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+.s-card{position:relative;height:165px;background:radial-gradient(#1a1a24,#0e0e13);border:1px solid #2a2a3a;border-radius:18px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;color:#ffd88a;overflow:hidden;box-shadow:inset 0 1px 0 #ffffff0d}
+.s-card b{color:#fff;display:block;margin-bottom:4px}.s-card canvas{position:absolute;inset:0;border-radius:18px}
+/* VAULT */
+.vault-btn{width:100%;height:180px;background:linear-gradient(135deg,#1c1c27,#0f0f14);border:1px solid #2a2a3a;border-radius:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:.3s}
+.vault-btn:hover{border-color:#E50914;transform:translateY(-4px)}
+.modal{position:fixed;inset:0;background:#000;display:none;z-index:100}
+.modal.active{display:flex;flex-direction:column}
+.reel{flex:1;overflow-y:scroll;scroll-snap-type:y mandatory}
+.reel-item{height:100vh;scroll-snap-align:start;position:relative;display:flex;align-items:center;justify-content:center;background:#000}
+.reel-item video{width:100%;height:100%;object-fit:cover;max-width:420px;margin:auto}
+.reel-cap{position:absolute;bottom:80px;left:15px;right:15px;background:linear-gradient(transparent,rgba(0,0,0,.8));padding:20px;border-radius:12px}
+#tease{position:fixed;inset:0;background:#050508;z-index:9999;display:flex;align-items:center;justify-content:center}
+.tbox{background:#14141c;border:1px solid #E50914;padding:26px;border-radius:18px;text-align:center;width:90%;max-width:360px}
 </style>
 </head>
 <body>
 
+<!-- FUNNY START SAME -->
 <div id="tease">
-  <div class="tbox" id="t1"><h3>Ruk ja Maryam! 🛑</h3><p>Faiza ne kaha sirf asli Maryam ko andar aane doon</p><button class="btn" onclick="nextT(2)" style="margin-top:15px">Main Asli wali hun 😌</button></div>
-  <div class="tbox" id="t2" style="display:none"><h3>Acha? Proof? 😏</h3><p>Meri birthday kab hai?</p><button class="btn" onclick="nextT(3)">18 October ❤️</button></div>
-  <div class="tbox" id="t3" style="display:none"><h3>Last wala 😂</h3><p>Ek pappi de do to jaane doon?</p><button class="btn" onclick="document.getElementById('tease').style.display='none';confetti()">Lo le lo 😘 Chalo andar!</button></div>
+  <div class="tbox" id="t1"><h3>Ruko Zara! 🛑</h3><p>Kya tum asal Maryam ho ya nakli?</p><button class="btn" onclick="nextT(2)" style="margin-top:12px">Asli wali hun 😎</button></div>
+  <div class="tbox" id="t2" style="display:none"><h3>Proof do 😏</h3><p>Faiza ka birthday kab hai?</p><button class="btn" onclick="nextT(3)">Mujhe yaad hai!</button></div>
+  <div class="tbox" id="t3" style="display:none"><h3>Akhri sawal 😂</h3><p>Faiza ko ek sher suna do to andar jaane doon</p><button class="btn" onclick="document.getElementById('tease').style.display='none'">Teri dosti pe jaan qurban ❤️</button></div>
 </div>
 
 <div class="hero">
-  <p style="letter-spacing:3px;color:#ff6b7a">FOR MY BESTIE</p>
+  <p style="letter-spacing:3px;color:#ff7a8a">18 OCTOBER SPECIAL</p>
   <h1>Happy Birthday <span>Maryam</span></h1>
-  <p style="margin-top:10px;opacity:.7">Tum meri zindagi ki sab se pyari dost ho - Faiza</p>
+  <p style="opacity:.7;margin-top:8px">From your Faiza, with love</p>
 
-  <div class="card" style="margin-top:25px">
-    <h3>18 October Tak Countdown ⏳</h3>
-    <div class="count" id="countdown"></div>
-    <div class="calendar">
-      <div class="head">October 2026</div>
-      <div class="days"><div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
-      <div></div><div></div><div></div><div>1</div><div>2</div><div>3</div><div>4</div>
-      <div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div>
-      <div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div class="heart">18</div>
-      <div>19</div><div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div></div>
-      <p style="margin-top:10px;font-size:.8rem;color:#E50914">18 ko meri duniya aayi thi ❤️</p>
+  <div class="real-cal">
+    <div class="real-cal-head"><span>◀</span> October 2026 <span>▶</span></div>
+    <div class="real-cal-grid">
+      <div class="day-name">Su</div><div class="day-name">Mo</div><div class="day-name">Tu</div><div class="day-name">We</div><div class="day-name">Th</div><div class="day-name">Fr</div><div class="day-name">Sa</div>
+      <div></div><div></div><div></div><div class="date">1</div><div class="date">2</div><div class="date">3</div><div class="date">4</div>
+      <div class="date">5</div><div class="date">6</div><div class="date">7</div><div class="date">8</div><div class="date">9</div><div class="date">10</div><div class="date">11</div>
+      <div class="date">12</div><div class="date">13</div><div class="date">14</div><div class="date">15</div><div class="date">16</div><div class="date">17</div><div class="date heart">18 ❤️</div>
+      <div class="date">19</div><div class="date">20</div><div class="date">21</div><div class="date">22</div><div class="date">23</div><div class="date">24</div><div class="date">25</div>
+      <div class="date">26</div><div class="date">27</div><div class="date">28</div><div class="date">29</div><div class="date">30</div><div class="date">31</div><div></div>
     </div>
   </div>
-  <button class="btn" onclick="document.getElementById('main').scrollIntoView({behavior:'smooth'})">Chalo Surprise Dekho 🎁</button>
+
+  <button class="btn" onclick="document.getElementById('main').scrollIntoView({behavior:'smooth'})">Surprise Kholu? 🎁</button>
 </div>
 
-<div id="main" style="padding:20px">
-  <div class="card" style="text-align:center">
-    <h2 style="font-family:'Playfair Display'">Meri Pyaari Maryam,</h2>
-    <p style="margin-top:15px;line-height:1.8;opacity:.85">Tum sirf dost nahi, behan ho. Tumhari hansi meri tension khatam kar deti hai. Allah kare tumhari har dua qabool ho, har khuwahish puri ho. Tum hamesha aise hi chamakti raho. Happy Birthday meri jaan! <br><br><b>- Tumhari Faiza ❤️</b></p>
-    <div style="display:flex;gap:20px;justify-content:center;margin-top:20px">
-      <img src="maryam.jpg" style="width:140px;height:180px;object-fit:cover;border-radius:15px"><img src="faiza.jpg" style="width:140px;height:180px;object-fit:cover;border-radius:15px">
-    </div>
+<div id="main" style="padding:18px">
+
+  <div class="card" style="text-align:center"><h2>Meri Pyaari Maryam 🌸</h2><p style="margin-top:12px;line-height:1.7;opacity:.85">Allah tumhe lambi zindagi de, har gham se door rakhe. Tum jaisi dost naseeb se milti hai. Love you meri jaan!</p><div style="margin-top:18px;display:flex;gap:12px;justify-content:center"><img src="maryam.jpg" style="width:120px;height:150px;object-fit:cover;border-radius:12px"><img src="faiza.jpg" style="width:120px;height:150px;object-fit:cover;border-radius:12px"></div></div>
+
+  <div class="card"><h3 style="text-align:center">🎂 Real Cake - Uper wali Candles Bujhao</h3>
+    <div class="cake-wrap"><div class="candles-row" id="candles"></div><div class="cake-layer2"></div><div class="cake-layer1"></div></div>
+    <p id="cakeMsg" style="text-align:center;margin-top:18px;color:#ff9fb0"></p>
   </div>
 
-  <div class="card"><h3 style="text-align:center">🎂 Cake - Candles Bujhao (Ek ek karke click karo)</h3>
-    <div class="cake-area"><div class="candles" id="candles"></div><div class="cake-base"></div></div>
-    <p id="cakeMsg" style="text-align:center;margin-top:15px;color:#ff8fa3"></p>
+  <div class="card"><h3>✨ Premium Dark Scratch - 9 Cards</h3><p style="opacity:.5;font-size:.85rem">Har card scratch karo, andar birthday + funny punishment bhi hai 😂</p><div class="scratch-grid" id="grid"></div></div>
+
+  <div class="card"><h2 style="text-align:center">MEMORIES VAULT 🔐</h2><p style="text-align:center;opacity:.6;font-size:.9rem">Andar jaane ke liye tang karungi thoda 😂</p>
+    <div style="margin-top:18px"><div class="vault-btn" onclick="openVault()"><span style="font-size:3rem">💎</span><b style="margin-top:8px">Open Memories Vault</b><small style="opacity:.6">10 Videos - Reel Style Scroll</small></div></div>
   </div>
 
-  <div class="card"><h3>✨ Scratch & Reveal - Dark Premium</h3><div class="scratch-grid" id="grid"></div></div>
-
-  <div class="card"><h2 style="text-align:center">MEMORIES</h2><p style="text-align:center;opacity:.6">Isme tang karne ke liye funny lock lagaya hai 😂</p>
-    <div class="folders">
-      <div class="folder" onclick="openMem('pics')"><span>📸</span><b>Pics Folder</b><small>10+ pics</small></div>
-      <div class="folder" onclick="openMem('videos')"><span>🎬</span><b>Videos Folder</b><small>10 videos</small></div>
-    </div>
-  </div>
 </div>
 
-<div class="modal" id="memModal" onclick="this.classList.remove('active')"><div class="box" onclick="event.stopPropagation()"><h3 id="mTitle"></h3><p id="mTease" style="opacity:.7;margin:8px 0"></p><div id="mContent"></div><button class="btn" style="margin-top:15px" onclick="document.getElementById('memModal').classList.remove('active')">Band karo</button></div></div>
+<div class="modal" id="vault"><div style="padding:12px;display:flex;justify-content:space-between;background:#111"><b>Memories Vault - Maryam ❤️</b><button class="btn" onclick="document.getElementById('vault').classList.remove('active')">Close ✕</button></div>
+<div class="reel" id="reel"></div>
+</div>
 
 <script>
 function nextT(n){document.querySelectorAll('.tbox').forEach(b=>b.style.display='none');document.getElementById('t'+n).style.display='block'}
-function confetti(){for(let i=0;i<80;i++){let d=document.createElement('div');d.style.position='fixed';d.style.left=Math.random()*100+'vw';d.style.top='-10px';d.style.fontSize='20px';d.innerText=['🎉','❤️','✨','🌸'][Math.floor(Math.random()*4)];d.style.animation=`fall ${2+Math.random()*2}s linear`;document.body.appendChild(d);setTimeout(()=>d.remove(),3000)}}
-let style=document.createElement('style');style.innerHTML='@keyframes fall{to{transform:translateY(100vh) rotate(360deg)}}';document.head.appendChild(style);
-// countdown to 18 Oct
-function cd(){let target=new Date(new Date().getFullYear(),9,18);if(new Date()>target)target.setFullYear(target.getFullYear()+1);let diff=target-new Date();let d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);document.getElementById('countdown').innerHTML=`<div><b>${d}</b>Days</div><div><b>${h}</b>Hours</div><div><b>${m}</b>Mins</div><div><b>${s}</b>Secs</div>`}setInterval(cd,1000);cd();
-// candles
-let wrap=document.getElementById('candles');for(let i=0;i<5;i++){let c=document.createElement('div');c.className='candle';c.onclick=function(){if(this.classList.contains('off'))return;this.classList.add('off');blown++;if(blown==5){document.getElementById('cakeMsg').innerText='MashAllah! Saari bujha di! Ab wish mango Maryam 🎉';confetti()}};wrap.appendChild(c)}let blown=0;
-// scratch premium dark
-const wishes=["Tum meri zindagi ka sukoon ho 💖🌹","Teri dosti pe naaz hai mujhe 👑✨","Allah tumhe har buri nazar se bachaye 🤲💐","Hamesha hansti muskurati raho 😍🌸","Tum jaisi dost sab ko mile ❤️🫶","Meri har dua me tum ho 💫🌷","Queen of my heart 💛👑","Tumhara dil sab se saaf hai 💝✨","Bestie forever ♾️💞","18 Oct meri fav date hai 🎂❤️"];
-const g=document.getElementById('grid');
-wishes.forEach(t=>{
+// cake
+let cWrap=document.getElementById('candles');for(let i=0;i<5;i++){let c=document.createElement('div');c.className='candle';c.onclick=function(){if(this.classList.contains('off'))return;this.classList.add('off');blown++;if(blown==5){document.getElementById('cakeMsg').innerText='Wah! Sab bujha diye! Ab wish mango Maryam 🎉🎂';confetti()}};cWrap.appendChild(c)}let blown=0;
+function confetti(){for(let i=0;i<70;i++){let d=document.createElement('div');d.style.position='fixed';d.style.left=Math.random()*100+'vw';d.style.top='-10px';d.innerText=['🎉','❤️','✨'][i%3];d.style.animation=`fall ${2+Math.random()*2}s linear`;document.body.appendChild(d);setTimeout(()=>d.remove(),3000)}}
+let st=document.createElement('style');st.innerHTML='@keyframes fall{to{transform:translateY(100vh)}}';document.head.appendChild(st);
+// scratch premium with birthday + funny
+const cards=[
+"<b>Happy Birthday Queen! 👑</b> Allah tumhe duniya ki har khushi de",
+"<b>Funny Punishment 😂</b> Ab Faiza ko ek badi si treat deni padegi! 🍕",
+"<b>You are my Jan 💖</b> Tumhare bina meri life adhuri hai",
+"<b>Tang karne wala 😜</b> Itni cute kyun ho? Tax lagna chahiye tum pe!",
+"<b>Birthday Wish 🎂</b> Har saal aise hi saath manayenge!",
+"<b>Secret 🤫</b> Tum meri sab se achi secret keeper ho!",
+"<b>Dua 🤲</b> Teri har dua qabool ho, meri yehi dua hai",
+"<b>Challenge 😂</b> Ab 10 bar bolo 'Faiza best hai' warna card nahi khulega!",
+"<b>Forever ♾️</b> Dosti kabhi khatam nahi hogi, promise!"
+];
+const grid=document.getElementById('grid');
+cards.forEach(t=>{
  let d=document.createElement('div');d.className='s-card';d.innerHTML=`<div>${t}</div>`;
- let cv=document.createElement('canvas');cv.width=220;cv.height=160;let ctx=cv.getContext('2d');ctx.fillStyle='#1e1e28';ctx.fillRect(0,0,220,160);ctx.fillStyle='#E50914';ctx.font='bold 13px Poppins';ctx.fillText('SCRATCH ME 💅',55,85);
- let dr=false;function s(e){if(!dr)return;let r=cv.getBoundingClientRect();let x=(e.touches?e.touches[0].clientX:e.clientX)-r.left;let y=(e.touches?e.touches[0].clientY:e.clientY)-r.top;ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(x,y,20,0,Math.PI*2);ctx.fill();}
- cv.addEventListener('mousedown',()=>dr=true);cv.addEventListener('mouseup',()=>dr=false);cv.addEventListener('mousemove',s);
- cv.addEventListener('touchstart',()=>dr=true);cv.addEventListener('touchend',()=>dr=false);cv.addEventListener('touchmove',s);
- d.appendChild(cv);g.appendChild(d);
+ let cv=document.createElement('canvas');cv.width=200;cv.height=165;let ctx=cv.getContext('2d');ctx.fillStyle='#15151f';ctx.fillRect(0,0,200,165);ctx.strokeStyle='#E50914';ctx.lineWidth=1;ctx.strokeRect(2,2,196,161);ctx.fillStyle='#fff';ctx.font='bold 12px Poppins';ctx.fillText('SCRATCH TO REVEAL ✨',28,85);
+ let dr=false;let fn=(e)=>{if(!dr)return;let r=cv.getBoundingClientRect();let x=(e.touches?e.touches[0].clientX:e.clientX)-r.left;let y=(e.touches?e.touches[0].clientY:e.clientY)-r.top;ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(x,y,22,0,Math.PI*2);ctx.fill();}
+ cv.addEventListener('mousedown',()=>dr=true);cv.addEventListener('mouseup',()=>dr=false);cv.addEventListener('mousemove',fn);
+ cv.addEventListener('touchstart',()=>dr=true);cv.addEventListener('touchend',()=>dr=false);cv.addEventListener('touchmove',fn);
+ d.appendChild(cv);grid.appendChild(d);
 });
-function openMem(type){
- document.getElementById('memModal').classList.add('active');
- let title=document.getElementById('mTitle'),tease=document.getElementById('mTease'),content=document.getElementById('mContent');
- if(type=='pics'){
-   title.innerText='📸 Pics Folder - Maryam ki khoobsurat yaadein';
-   tease.innerText='Dekh lo kitni cute ho tum, nazar na lage 😏❤️';
-   content.innerHTML='<div class="video-grid"><img src="maryam.jpg" style="width:100%;border-radius:12px"><img src="faiza.jpg" style="width:100%;border-radius:12px"><div style="background:#1e1e28;padding:40px;border-radius:12px;text-align:center">pic3.jpg yahan add karo</div><div style="background:#1e1e28;padding:40px;border-radius:12px;text-align:center">pic4.jpg yahan add karo</div></div>';
- } else {
-   title.innerText='🎬 Videos Folder - 10 Videos Tak';
-   tease.innerText='Abey itni videos? Thak jaogi dekh ke 😂 Lekin dekhna zaroor!';
-   let v='';for(let i=1;i<=10;i++){v+=`<div style="background:#1a1a22;border:1px solid #222;border-radius:12px;padding:10px"><p style="font-size:.8rem;margin-bottom:6px">video${i}.mp4</p><video controls src="video${i}.mp4" poster="maryam.jpg"></video><small style="opacity:.5">Agar video nahi hai to ye black rahega, upload karte hi chalega</small></div>`}
-   content.innerHTML='<div class="video-grid">'+v+'</div><p style="margin-top:12px;opacity:.6">Tip: GitHub pe video1.mp4 se video10.mp4 tak upload karo, khud chal jayenge!</p>';
+// vault reel scroll type
+function openVault(){
+ document.getElementById('vault').classList.add('active');
+ let reel=document.getElementById('reel');
+ if(reel.innerHTML!='')return;
+ let html='';
+ for(let i=1;i<=10;i++){
+   html+=`<div class="reel-item"><video controls playsinline src="video${i}.mp4" poster="maryam.jpg"></video><div class="reel-cap"><b>Memory #${i} ❤️</b><br><small>${i==1?'Pehli video - Yaad hai ye din? 😍':i==10?'Last - Love you forever ♾️':'Cute moment with you ✨'} - Faiza</small><br><small style="opacity:.6">Scroll up for next 👆</small></div></div>`;
  }
+ reel.innerHTML=html;
 }
 </script>
 </body>
