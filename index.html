@@ -1,79 +1,179 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Maryam - 18 Oct</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maryam — The Birthday Issue</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{background:#08080c;color:#fff;font-family:'Poppins'}
-.hero{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;background:radial-gradient(circle at 20% 20%,#2a1220 0%,#08080c 70%)}
-h1{font-family:'Playfair Display';font-size:3.6rem}h1 span{color:#E50914}
-.count{display:flex;gap:10px;margin-top:15px}.count div{background:#15151f;border:1px solid #26263a;padding:12px 14px;border-radius:12px;min-width:75px}
-.count b{color:#E50914;font-size:1.6rem;display:block}
-.btn{margin-top:18px;padding:13px 30px;background:#E50914;border:none;border-radius:30px;color:#fff;font-weight:600;cursor:pointer}
-.card{max-width:900px;margin:30px auto;background:#12121a;border:1px solid #1e1e28;border-radius:20px;padding:22px}
-#slowText{font-family:'Great Vibes';font-size:4rem;color:#ff8fa3;min-height:80px}
-.cal{width:320px;margin:15px auto;background:#fff;border-radius:18px;overflow:hidden}.cal-head{background:#E50914;color:#fff;padding:12px;display:flex;justify-content:space-between;font-weight:700}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;padding:10px;color:#111;gap:4px;font-size:.9rem}.cal-grid.heart{background:#E50914;color:#fff;border-radius:10px;animation:beat 1.2s infinite}
-@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
-.cake-wrap{position:relative;width:260px;margin:90px auto 10px}.cake1{width:260px;height:95px;background:linear-gradient(#fff0f3,#ffb3c1);border-radius:14px}.cake2{width:190px;height:65px;background:linear-gradient(#ff8fa3,#ff4d6d);margin:-10px auto 0;border-radius:10px}
-.candles{position:absolute;top:-45px;left:50%;transform:translateX(-50%);display:flex;gap:15px}.candle{width:14px;height:40px;background:#fff;border-radius:5px;cursor:pointer;position:relative}.candle::before{content:'🔥';position:absolute;top:-20px;left:50%;transform:translateX(-50%)}.candle.off::before{content:'💨'}.candle.off{opacity:.4}
-.scratch{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.sc{position:relative;height:150px;background:#15151f;border:1px solid #2a2a3a;border-radius:16px;display:flex;align-items:center;justify-content:center;padding:10px;color:#ffd88a;text-align:center;overflow:hidden}.sc canvas{position:absolute;inset:0}
-.vault{width:100%;height:170px;background:linear-gradient(135deg,#1c1c27,#0f0f14);border:1px solid #2a2a3a;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer}
-.modal{position:fixed;inset:0;background:#000;z-index:100;display:none;flex-direction:column}.modal.active{display:flex}.reel{flex:1;overflow-y:scroll;scroll-snap-type:y mandatory}.item{height:100vh;scroll-snap-align:start;position:relative;display:flex;align-items:center;justify-content:center}.item video{width:100%;height:100%;object-fit:cover;max-width:420px}
-.cap{position:absolute;bottom:70px;left:10px;right:10px;background:linear-gradient(transparent,rgba(0,0,0,.8));padding:12px;border-radius:10px}
-#tease{position:fixed;inset:0;background:#050508;z-index:9999;display:flex;align-items:center;justify-content:center}.tbox{background:#14141c;border:1px solid #E50914;padding:24px;border-radius:18px;text-align:center;width:90%;max-width:350px}
-@keyframes fall{to{transform:translateY(100vh) rotate(360deg)}}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@400;600;700&display=swap');
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#090810;color:#f8eff5;font-family:'DM Sans',sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 10% 10%,#49213f55,transparent 45%),radial-gradient(ellipse at 90% 65%,#28205255,transparent 45%);z-index:-1}
+header{padding:22px 7%;display:flex;justify-content:space-between;border-bottom:1px solid #ffffff20;letter-spacing:3px;font-size:11px}
+main{max-width:1050px;margin:auto;padding:30px 22px}
+.eyebrow{color:#f1a9cb;letter-spacing:4px;font-size:10px;text-transform:uppercase}
+.hero{min-height:82vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px}
+h1{font:500 clamp(55px,9vw,105px)/.92 'Playfair Display',serif;letter-spacing:-5px;margin:25px 0}
+h1 em{color:#f1a9cb}
+p{color:#bcb2c4;line-height:1.9}
+button,.btn{border:1px solid #ffffff35;padding:13px 18px;background:#ffffff08;color:#fff;border-radius:3px;cursor:pointer;font-weight:600;margin:5px 5px 5px 0}
+button:hover,.btn:hover{border-color:#f1a9cb;background:#f1a9cb18}
+.primary{background:#f1a9cb;color:#21111d;border-color:#f1a9cb}
+.cover{min-height:440px;border:1px solid #e9b6d577;outline:1px solid #e9b6d733;outline-offset:-10px;background:linear-gradient(145deg,#40223e,#141321 60%,#302047);display:grid;place-items:center;text-align:center;padding:25px;position:relative;box-shadow:15px 15px 0 #f1a9cb15}
+.cover h2{font:italic clamp(55px,8vw,90px)/.95 'Playfair Display';margin:20px 0}
+.cover small{letter-spacing:4px;color:#f1a9cb}
+.spark{position:absolute;color:#e9d49b;font-size:25px;animation:glow 2s infinite alternate}
+.s1{top:15%;left:15%}.s2{right:15%;top:28%}.s3{bottom:15%;left:20%}
+@keyframes glow{to{opacity:.3;transform:rotate(35deg) scale(.7)}}
+section{padding:65px 0;border-top:1px solid #ffffff1b}
+h3{font:500 32px 'Playfair Display'}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.card{background:#ffffff08;border:1px solid #ffffff19;padding:25px}
+.card h3{color:#f1c5da}
+.quote{font:italic clamp(28px,5vw,52px)/1.35 'Playfair Display';text-align:center}
+.quote em{color:#f1a9cb}
+.album{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}
+.photo{position:relative;min-height:210px;border:1px dashed #b8a4d866;background:#171421;display:grid;place-items:center;overflow:hidden;text-align:center;color:#bcb2c4}
+.photo img{position:absolute;width:100%;height:100%;object-fit:cover}
+.photo span{z-index:1;background:#090810bb;padding:8px}
+.photo button{position:absolute;right:5px;top:5px;z-index:2}
+input[type=file]{max-width:100%;color:#c9bdd0;margin:12px 0}
+.secret{display:none;background:#17111f;border:1px solid #f1a9cb66;padding:22px;margin-top:18px;line-height:1.9}
+.secret.show{display:block}
+.prank{text-align:center;background:linear-gradient(135deg,#25172b,#12111e);padding:35px 20px;border:1px solid #b8a4d855}
+footer{text-align:center;padding:50px 15px;color:#a99caf}
+@media(max-width:650px){.hero{grid-template-columns:1fr;padding:35px 0}.cover{min-height:350px}.grid{grid-template-columns:1fr}.album{grid-template-columns:1fr 1fr}.photo{min-height:160px}header{letter-spacing:1px}}
 </style>
 </head>
 <body>
+<header>
+  <span>MARYAM / SPECIAL EDITION</span>
+  <span>18 · OCTOBER</span>
+</header>
+<main>
+  <div class="hero">
+    <div>
+      <div class="eyebrow">A little website for my favourite human</div>
+      <h1>Happy<br><em>Birthday,</em><br>Maryam.</h1>
+      <p>Today, the universe has one extra reason to sparkle. This little corner of the internet belongs to you — full of love, memories, and a little bestie-level nonsense. ♡</p>
+      <button class="primary" onclick="document.querySelector('#letter').scrollIntoView()">Open your surprise ↗</button>
+      <button onclick="party()">Make it sparkle ✦</button>
+    </div>
+    <div class="cover">
+      <span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">♡</span>
+      <div><small>THE BIRTHDAY ISSUE · NO. 018</small>
+      <h2>Maryam<br>Mag.</h2>
+      <p>THE GIRL. THE MYTH.<br>THE BEAUTIFUL CHAOS.</p>
+      <small>ONE OF ONE · MADE WITH LOVE</small></div>
+    </div>
+  </div>
 
-<div id="tease">
-<div class="tbox" id="t1"><h3>Ruk ja Maryam! 🛑</h3><p>Asli Maryam ho?</p><button class="btn" onclick="nextT(2)">Haan main hi hun 😎</button></div>
-<div class="tbox" id="t2" style="display:none"><h3>Saboot do 😏</h3><p>Faiza ki bestie kaun hai?</p><button class="btn" onclick="nextT(3)">Main hun!</button></div>
-<div class="tbox" id="t3" style="display:none"><h3>Akhirii 😂</h3><p>Bolo Faiza meri jaan hai</p><button class="btn" onclick="document.getElementById('tease').style.display='none';startWish()">Faiza meri jaan hai ❤️</button></div>
-</div>
+  <section id="letter">
+    <div class="eyebrow">01 / A letter from your bestie</div>
+    <h3>To my favourite human, ♡</h3>
+    <div class="grid">
+      <div class="card"><h3>The soft part</h3>
+        <p>Happy birthday, Maryam. May this new chapter bring you peaceful days, beautiful surprises, real happiness, and people who love you exactly as you are. I'm so grateful that our stories crossed.</p>
+      </div>
+      <div class="card"><h3>The bestie part</h3>
+        <p>You're getting older, but please don't expect your level of pagal-pan to improve. 😂 May your selfies be perfect on the first try, your snacks never run out, and your problems stay smaller than your birthday cake.</p>
+      </div>
+    </div>
+    <button class="primary" onclick="reveal('letterSecret')">Unlock my secret message 💌</button>
+    <div id="letterSecret" class="secret">
+      Maryam, whatever life brings, I hope you never forget how special you are. Thank you for the laughs, the little moments, and the memories still waiting to happen. Keep dreaming big and laughing loudly. You deserve a world full of good things. Happy birthday, meri bestie. Love you always. 💗
+    </div>
+  </section>
 
-<div class="hero">
-<p style="color:#ff7a8a;letter-spacing:3px;font-size:.8rem">18 OCTOBER - SPECIAL DAY</p>
-<h1>For My <span>Maryam</span></h1>
-<div style="margin-top:20px;background:#12121a;padding:18px;border-radius:16px;border:1px solid #1e1e28">
-<p style="opacity:.6;font-size:.8rem">18 OCTOBER TAK</p>
-<div class="count" id="cd"></div>
-</div>
-<button class="btn" onclick="document.getElementById('grand').scrollIntoView({behavior:'smooth'})">Neeche Dekho 👇</button>
-</div>
+  <section>
+    <div class="eyebrow">02 / The memory archive</div>
+    <h3>Our little time machine.</h3>
+    <p>Add your favourite pictures below. Each one gets its own magazine-style memory card.</p>
+    <label for="photos">＋ Choose your photos</label><br>
+    <input id="photos" type="file" accept="image/*" multiple>
+    <div class="album" id="album">
+      <div class="photo"><span>✧ Your favourite selfie goes here</span></div>
+      <div class="photo"><span>♡ The day we couldn't stop laughing</span></div>
+      <div class="photo"><span>✦ A memory to keep forever</span></div>
+    </div>
+  </section>
 
-<div id="grand" style="min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px;background:radial-gradient(circle at center,#1a0a14,#08080c)">
-<h2 id="slowText"></h2>
-<p id="wishP" style="max-width:600px;margin-top:15px;line-height:1.8;opacity:0;transition:1.5s">Meri pyari dost, meri behan, tum meri zindagi ka sukoon ho. Allah tumhe hamesha khush rakhe, tumhari har dua qabool ho. Love you meri Maryam! <br><br><b>- Faiza ❤️</b></p>
-<div style="display:flex;gap:12px;margin-top:18px"><img src="maryam.jpg" style="width:120px;height:160px;object-fit:cover;border-radius:12px"><img src="faiza.jpg" style="width:120px;height:160px;object-fit:cover;border-radius:12px"></div>
-</div>
+  <section>
+    <div class="eyebrow">03 / Official bestie poetry</div>
+    <blockquote class="quote">
+      “Some people become memories,<br>
+      but you became a <em>part of my story.</em><br>
+      More laughter, more tomorrows,<br>
+      more beautiful moments still to come.”
+    </blockquote>
+  </section>
 
-<div style="padding:15px">
-<div class="card" style="text-align:center"><h3>📅 Real Calendar - 18 pe Dil ❤️</h3><div class="cal"><div class="cal-head"><span>◀</span> October 2026 <span>▶</span></div><div class="cal-grid" style="font-weight:700;opacity:.5;font-size:.7rem"><div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div></div><div class="cal-grid"><div></div><div></div><div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div class="heart">18 ❤️</div><div>19</div><div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div><div>29</div><div>30</div><div>31</div></div></div></div>
+  <section>
+    <div class="eyebrow">04 / The bestie emergency department</div>
+    <div class="prank">
+      <h3>Maryam, we need to talk. 👀</h3>
+      <p>We have received a very serious complaint about you.</p>
+      <button class="primary" onclick="reveal('prank1')">Open the complaint 😭</button>
+      <button onclick="reveal('prank2')">I demand a lawyer 😈</button>
+      <button onclick="reveal('prank3')">Where is my cake? 🍰</button>
+      <div id="prank1" class="secret">🚨 BESTIE ALERT! You have been accused of being too iconic, too dramatic, and impossible to replace. Your sentence: lifetime friendship. 😂💗</div>
+      <div id="prank2" class="secret">Your lawyer is busy eating your birthday cake. Case dismissed. You are sentenced to unlimited gossip sessions and forever friendship. 😭</div>
+      <div id="prank3" class="secret">Finally, a girl with priorities! Cake is mandatory, calories are on vacation, and the birthday girl gets the biggest slice. 🍰✨</div>
+    </div>
+  </section>
 
-<div class="card"><h3>💐 Bouquets + Birthday Cards</h3><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px"><div style="background:#fff0f3;color:#111;padding:18px;border-radius:14px;text-align:center"><div style="font-size:2.2rem">🌹💐</div><b>Rose Bouquet</b></div><div style="background:#fff8e1;color:#111;padding:18px;border-radius:14px;text-align:center"><div style="font-size:2.2rem">🌷🌸</div><b>Mix Flowers</b></div><div style="background:#fff;color:#111;padding:18px;border-radius:14px;text-align:center"><div style="font-size:1.8rem">💌</div><b>Happy Birthday Card</b><br><small>Teri hansi pe jaan qurban</small></div></div></div>
-
-<div class="card"><h3 style="text-align:center">🎂 Cake - Candles Uper (Ek ek karke bujhao)</h3><div class="cake-wrap"><div class="candles" id="candles"></div><div class="cake2"></div><div class="cake1"></div></div><p id="cakeMsg" style="text-align:center;margin-top:12px;color:#ff8fa3"></p></div>
-
-<div class="card"><h3>✨ Scratch Cards - Dark Premium</h3><div class="scratch" id="grid"></div></div>
-
-<div class="card"><h3 style="text-align:center">💎 MEMORIES VAULT - 10 Videos</h3><div style="margin-top:12px"><div class="vault" onclick="openVault()"><span style="font-size:2.5rem">🔐</span><b>Open Vault - Reel Type Scroll</b><small>Upar neeche scroll hogi videos</small></div></div></div>
-</div>
-
-<div class="modal" id="vaultM"><div style="padding:12px;display:flex;justify-content:space-between;background:#111"><b>Memories Vault</b><button class="btn" onclick="document.getElementById('vaultM').classList.remove('active')">Close</button></div><div class="reel" id="reel"></div></div>
-
+  <section>
+    <div class="eyebrow">05 / A wish for your next chapter</div>
+    <div class="grid">
+      <div class="card"><h3>Big dreams.</h3><p>May you find courage for every dream, peace through every challenge, and success that makes your heart proud.</p></div>
+      <div class="card"><h3>Soft life.</h3><p>May your days bring genuine people, happy surprises, beautiful photos, unlimited snacks, and reasons to smile.</p></div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="eyebrow">End of issue · Beginning of another beautiful year</div>
+  <h3>For Maryam, always. ♡</h3>
+  Made with love, a little drama, and a whole lot of friendship.
+  <br><br><button onclick="party()">One last sparkle ✨</button>
+</footer>
 <script>
-function nextT(n){document.querySelectorAll('.tbox').forEach(b=>b.style.display='none');document.getElementById('t'+n).style.display='block'}
-function updateCD(){let t=new Date(new Date().getFullYear(),9,18);if(new Date()>t)t.setFullYear(t.getFullYear()+1);let d=t-new Date();let days=Math.floor(d/86400000),h=Math.floor(d%86400000/3600000),m=Math.floor(d%3600000/60000),s=Math.floor(d%60000/1000);document.getElementById('cd').innerHTML=`<div><b>${days}</b>Days</div><div><b>${h}</b>Hrs</div><div><b>${m}</b>Mins</div><div><b>${s}</b>Secs</div>`}setInterval(updateCD,1000);updateCD();
-function blast(){for(let i=0;i<100;i++){let el=document.createElement('div');el.style.position='fixed';el.style.left=Math.random()*100+'vw';el.style.top='-10px';el.innerText=['🎉','🎊','💖','✨','🎈','🌸'][Math.floor(Math.random()*6)];el.style.fontSize='20px';el.style.animation=`fall ${2+Math.random()*2}s linear`;el.style.zIndex=9999;document.body.appendChild(el);setTimeout(()=>el.remove(),3000)}}
-let text="Happy Birthday Maryam...";let idx=0;function startWish(){if(idx<text.length){document.getElementById('slowText').innerHTML+=text.charAt(idx);idx++;setTimeout(startWish,110)}else{document.getElementById('wishP').style.opacity='1';blast();blast()}}
-let ob=new IntersectionObserver(e=>{if(e[0].isIntersecting){startWish();ob.disconnect()}},{threshold:0.5});ob.observe(document.getElementById('grand'));
-let wrap=document.getElementById('candles');for(let i=0;i<5;i++){let c=document.createElement('div');c.className='candle';c.onclick=function(){if(this.classList.contains('off'))return;this.classList.add('off');blown++;if(blown==5){document.getElementById('cakeMsg').innerText='Sab bujha diye! Wish mango Maryam 🎉';blast()}};wrap.appendChild(c)}let blown=0;
-const wishes=["Queen Maryam 👑","Biryani treat? 😂🍕","My Jaan 💖","Cute kyun ho? 😜","Bestie Forever ♾️","Allah khush rakhe 🤲","Chocolate do 🍫","Selfie bhejo 😂","Love you ❤️"];
-const g=document.getElementById('grid');wishes.forEach(t=>{let d=document.createElement('div');d.className='sc';d.innerHTML=`<div>${t}</div>`;let cv=document.createElement('canvas');cv.width=180;cv.height=150;let ctx=cv.getContext('2d');ctx.fillStyle='#15151f';ctx.fillRect(0,0,180,150);ctx.fillStyle='#fff';ctx.font='bold 10px Poppins';ctx.fillText('SCRATCH ✨',50,75);let dr=false;let fn=e=>{if(!dr)return;let r=cv.getBoundingClientRect();let x=(e.touches?e.touches[0].clientX:e.clientX)-r.left;let y=(e.touches?e.touches[0].clientY:e.clientY)-r.top;ctx.globalCompositeOperation='destination-out';ctx.beginPath();ctx.arc(x,y,20,0,Math.PI*2);ctx.fill()};cv.addEventListener('mousedown',()=>dr=true);cv.addEventListener('mouseup',()=>dr=false);cv.addEventListener('mousemove',fn);cv.addEventListener('touchstart',()=>dr=true);cv.addEventListener('touchend',()=>dr=false);cv.addEventListener('touchmove',fn);d.appendChild(cv);g.appendChild(d)});
-function openVault(){document.getElementById('vaultM').classList.add('active');let reel=document.getElementById('reel');if(reel.innerHTML!='')return;let h='';for(let i=1;i<=10;i++){h+=`<div class="item"><video controls playsinline src="video${i}.mp4" poster="maryam.jpg"></video><div class="cap"><b>Memory ${i} ❤️</b><br><small>Scroll up for next 👆 - Faiza</small></div></div>`}reel.innerHTML=h}
+function reveal(id){
+ const el=document.getElementById(id);
+ el.classList.toggle('show');
+}
+document.getElementById('photos').addEventListener('change',function(){
+ const album=document.getElementById('album');
+ for(const file of this.files){
+  if(!file.type.startsWith('image/'))continue;
+  const url=URL.createObjectURL(file);
+  const card=document.createElement('div');
+  card.className='photo';
+  const img=document.createElement('img');
+  img.src=url;
+  img.alt='Birthday memory';
+  const remove=document.createElement('button');
+  remove.textContent='×';
+  remove.onclick=()=>{URL.revokeObjectURL(url);card.remove()};
+  card.append(img,remove);
+  album.append(card);
+ }
+ this.value='';
+});
+function party(){
+ const icons=['✦','♡','✧','✨','💗','🎂'];
+ for(let i=0;i<45;i++){
+  const el=document.createElement('span');
+  el.textContent=icons[Math.floor(Math.random()*icons.length)];
+  el.style.cssText=`position:fixed;top:-30px;left:${Math.random()*100}vw;z-index:99;pointer-events:none;font-size:${16+Math.random()*18}px;color:${['#f1a9cb','#c5aaff','#ead49b'][i%3]};animation:fall ${3+Math.random()*3}s linear forwards`;
+  document.body.append(el);
+  setTimeout(()=>el.remove(),6500);
+ }
+}
+const style=document.createElement('style');
+style.textContent='@keyframes fall{to{transform:translateY(110vh) rotate(650deg);opacity:0}}';
+document.head.append(style);
 </script>
 </body>
 </html>
