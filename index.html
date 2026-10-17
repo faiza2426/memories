@@ -2,289 +2,168 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maryam — The Birthday Edition</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maryam | The Midnight Birthday Edition</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
-:root{--bg:#09070b;--panel:#171019;--pink:#f3a5c7;--purple:#bba5ff;--text:#fff4fa;--muted:#b7a7b5;--line:#382538}
+:root{--bg:#08060b;--panel:#17111c;--pink:#f2a4c7;--violet:#c4a8ff;--white:#fff5fb;--muted:#b7a8b8;--line:#39283d}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif}
-body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at 10% 5%,#63274530,transparent 40%),radial-gradient(ellipse at 90% 70%,#482c7330,transparent 45%)}
+body{margin:0;background:var(--bg);color:var(--white);font-family:'DM Sans',sans-serif}
 button{font:inherit;cursor:pointer}
-a{color:inherit;text-decoration:none}
-.wrap{width:min(1120px,90%);margin:auto}
-section{padding:90px 0;border-bottom:1px solid #ffffff0d}
-.eyebrow{font-size:10px;letter-spacing:4px;color:var(--pink);text-transform:uppercase}
+button:focus-visible{outline:2px solid var(--pink);outline-offset:4px}
+#stars{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 15% 15%,#61244230,transparent 40%),radial-gradient(ellipse at 90% 85%,#49307530,transparent 40%)}
+#stars:after{content:"✧   ·       ✦       ·   ✧";position:absolute;inset:12% 5%;font-size:20px;letter-spacing:50px;line-height:8;opacity:.15;animation:glow 5s infinite alternate}
+@keyframes glow{to{opacity:.45}}
+#app{position:relative;z-index:1;min-height:100svh;display:flex;flex-direction:column}
+header{height:70px;border-bottom:1px solid #ffffff12;display:flex;align-items:center;justify-content:space-between;padding:0 5%;gap:12px}
+.logo{font:italic 23px 'Playfair Display',serif;color:var(--pink)}
+.progress{display:flex;gap:6px;align-items:center}
+.dot{width:6px;height:6px;border-radius:50%;background:#4b3b4d}
+.dot.active{background:var(--pink);box-shadow:0 0 12px var(--pink)}
+#screen{width:min(1050px,90%);margin:auto;padding:38px 0 24px;flex:1;display:flex;align-items:center;animation:appear .55s ease}
+@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.screen-content{width:100%}
+.eyebrow{font-size:10px;letter-spacing:4px;color:var(--pink);text-transform:uppercase;line-height:2}
 h1,h2,h3,p{margin-top:0}
-h2{font:clamp(37px,6vw,65px)/1.08 'Playfair Display',serif;margin:18px 0}
-.serif{font-family:'Playfair Display',serif}
-.pink{color:var(--pink)}
-.muted{color:var(--muted);line-height:1.8}
-.btn{background:var(--pink);color:#1b0c16;border:1px solid var(--pink);padding:13px 20px;font-weight:700;transition:.3s}
-.btn:hover{transform:translateY(-3px);box-shadow:0 8px 30px #f3a5c730}
-.ghost{background:transparent;color:var(--text);border-color:var(--line)}
-/* secret entrance */
-#gate{position:fixed;inset:0;z-index:50;background:#08060a;display:grid;place-items:center;padding:24px;text-align:center;transition:opacity .8s,visibility .8s}
-#gate.hide{opacity:0;visibility:hidden}
-.gate-card{max-width:520px}
-.gate-card h1{font:clamp(50px,10vw,88px)/.98 'Playfair Display',serif;margin:25px 0}
-.gate-card p{color:var(--muted);line-height:1.8}
-.gate-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-#gateMsg{color:var(--pink);min-height:35px;margin-top:20px}
-/* navigation */
-nav{position:sticky;top:0;z-index:15;background:#09070be8;backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
-.nav{width:min(1120px,90%);margin:auto;min-height:65px;display:flex;justify-content:space-between;align-items:center;gap:15px}
-.logo{font:italic 24px 'Playfair Display',serif;color:var(--pink)}
-.links{display:flex;gap:18px;flex-wrap:wrap}
-.links a{font-size:10px;letter-spacing:1px;color:var(--muted)}
-.links a:hover{color:var(--pink)}
-/* hero */
-.hero{min-height:90vh;display:flex;align-items:center;padding:65px 0}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:55px}
-.hero h1{font:clamp(62px,9.8vw,115px)/.91 'Playfair Display',serif;letter-spacing:-4px;margin:25px 0}
-.hero h1 em{color:var(--pink);font-weight:500}
-.hero p{color:var(--muted);line-height:1.9;max-width:460px}
-.cover{min-height:460px;padding:25px;border:1px solid #79516d;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#47223c,#1b1124 65%,#0c0910);position:relative;transform:rotate(2deg);box-shadow:0 35px 90px #0009}
-.cover:after{content:"";position:absolute;inset:10px;border:1px solid #ffffff18;pointer-events:none}
-.cover-top,.cover-bottom{display:flex;justify-content:space-between;font-size:9px;letter-spacing:2px;color:#e2c6dc}
-.cover-title{font:clamp(48px,6.8vw,78px)/.96 'Playfair Display',serif}
-.cover-title em{color:var(--pink)}
-.star{text-align:center;font-size:100px;color:var(--pink);text-shadow:0 0 40px #f3a5c766;animation:pulse 3s infinite}
-@keyframes pulse{50%{transform:scale(1.07);text-shadow:0 0 65px #f3a5c7aa}}
-.countdown{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0 12px}
-.time{min-width:75px;text-align:center;border:1px solid var(--line);background:#120d16;padding:14px}
-.time strong{display:block;color:var(--pink);font:30px 'Playfair Display',serif}
-.time span{font-size:8px;letter-spacing:2px;color:var(--muted)}
-/* gallery */
-.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-top:32px}
-.memory{position:relative;min-height:220px;background:linear-gradient(145deg,#392239,#17101d);border:1px solid var(--line);overflow:hidden;cursor:pointer;transition:.35s}
-.memory:nth-child(4n+2){transform:translateY(18px)}
-.memory:hover{transform:translateY(-5px) rotate(-1deg);border-color:var(--pink)}
-.memory img{width:100%;height:100%;min-height:220px;position:absolute;inset:0;object-fit:cover;transition:transform .7s}
-.memory:hover img{transform:scale(1.07)}
-.memory:has(img):after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#09060be8);pointer-events:none}
-.memory-label{position:absolute;bottom:0;left:0;right:0;z-index:1;padding:30px 13px 14px;font-size:12px;line-height:1.5}
-.memory-label small{display:block;color:var(--pink);font-size:9px;letter-spacing:2px;margin-bottom:5px}
-.placeholder{height:220px;display:grid;place-items:center;text-align:center;padding:12px}
-.placeholder span{font-size:40px;color:#f3a5c7}
-.placeholder small{display:block;color:#b7a7b5;font-size:10px;margin-top:10px;letter-spacing:1px}
-.memory img:not([src]),.memory img[src=""]{display:none}
-.photo-note{font-size:12px;color:var(--muted);line-height:1.8;margin-top:25px}
-/* cards and letter */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:35px}
-.card{padding:25px;background:linear-gradient(145deg,#1b121e,#100c13);border:1px solid var(--line)}
-.card .number{font:italic 28px 'Playfair Display',serif;color:var(--pink)}
-.card h3{font:24px 'Playfair Display',serif;margin:16px 0 10px}
-.card p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:0}
-.letter{max-width:780px;margin:35px auto 0;padding:clamp(25px,6vw,60px);background:#171019;border:1px solid #55364e;position:relative}
-.letter:before{content:"A LETTER FOR YOU";position:absolute;right:18px;top:15px;font-size:8px;letter-spacing:3px;color:#b18aa8}
-.letter p{font:18px/2 'Playfair Display',serif;color:#eadce8}
-.poem{font:italic clamp(24px,4vw,39px)/1.7 'Playfair Display',serif;color:#f0d8e8}
-.interactive{background:#130e17;border:1px solid var(--line);padding:26px;margin-top:30px}
-.output{font:italic 23px/1.6 'Playfair Display',serif;color:var(--pink);margin:22px 0;min-height:40px}
-.options{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
-.options button{background:#211725;color:var(--text);border:1px solid #52394f;padding:12px 16px}
-.options button:hover{border-color:var(--pink)}
-.cake{font-size:100px;display:inline-block;cursor:pointer;transition:.3s}
+h1{font:clamp(48px,9vw,94px)/.98 'Playfair Display',serif;letter-spacing:-2px;margin:20px 0}
+h2{font:clamp(36px,6vw,61px)/1.05 'Playfair Display',serif;margin:18px 0}
+h3{font:24px 'Playfair Display',serif}
+em,.pink{color:var(--pink)}
+.muted{color:var(--muted);line-height:1.85}
+.center{text-align:center}
+.btn{padding:13px 20px;border:1px solid var(--pink);background:var(--pink);color:#1b0d18;font-weight:700;transition:.25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px #f2a4c72e}
+.ghost{background:transparent;color:var(--white);border-color:var(--line)}
+.actions{display:flex;justify-content:space-between;gap:12px;margin-top:30px;flex-wrap:wrap}
+.actions.right{justify-content:flex-end}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.cover{min-height:360px;border:1px solid #754c6c;background:linear-gradient(145deg,#4a203d,#1c1224 65%,#0c0910);padding:24px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 30px 90px #0008}
+.cover-title{font:clamp(45px,6vw,73px)/.98 'Playfair Display',serif}
+.cover-foot{display:flex;justify-content:space-between;letter-spacing:2px;font-size:9px;color:#dfc6dc}
+.card-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.memory{height:180px;position:relative;background:linear-gradient(140deg,#3c243d,#15101b);border:1px solid var(--line);overflow:hidden;cursor:pointer}
+.memory img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.memory .label{position:absolute;bottom:0;left:0;right:0;padding:22px 9px 9px;background:linear-gradient(transparent,#08060bf0);font-size:11px}
+.memory .empty{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--pink);font-size:30px}
+.memory .empty small{display:block;font-size:9px;letter-spacing:1px;color:var(--muted)}
+.media-frame{width:min(780px,100%);margin:22px auto;border:1px solid #65445f;background:#100c14;padding:10px;box-shadow:0 25px 70px #0008}
+video{width:100%;max-height:55vh;display:block;background:#050408}
+.video-caption{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:13px 4px 2px;font-size:11px;color:var(--muted)}
+.letter{max-width:740px;margin:22px auto;background:#171019;border:1px solid #51384f;padding:clamp(20px,5vw,45px);font:18px/1.9 'Playfair Display',serif;color:#eeddea}
+.output{font:italic 23px/1.6 'Playfair Display',serif;color:var(--pink);margin:18px 0;min-height:34px}
+.options{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.options button{background:#211725;border:1px solid #503852;color:white;padding:12px 15px}
+.cake{font-size:90px;cursor:pointer;display:inline-block;transition:.3s}
 .cake:hover{transform:scale(1.1)}
-footer{text-align:center;padding:45px 20px;color:var(--muted);font-size:10px;letter-spacing:2px;line-height:2}
-#confetti{position:fixed;inset:0;z-index:60;overflow:hidden;pointer-events:none}
-.bit{position:absolute;top:-15px;width:8px;height:13px;animation:fall 3.5s linear forwards}
-@keyframes fall{to{transform:translateY(110vh) rotate(800deg);opacity:.1}}
-#modal{display:none;position:fixed;inset:0;z-index:70;background:#050408f2;align-items:center;justify-content:center;padding:20px}
-#modal.show{display:flex}
-.modal-box{width:min(850px,100%);max-height:90vh;overflow:auto;background:#171019;padding:22px;border:1px solid var(--line);text-align:center}
-.modal-box img{max-width:100%;max-height:70vh;object-fit:contain}
-#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:80;background:var(--pink);color:#170b14;padding:13px 20px;opacity:0;transition:.3s;pointer-events:none;font-size:12px}
+.countdown{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.time{padding:12px 16px;border:1px solid var(--line);min-width:70px;background:#120d16;text-align:center}
+.time strong{display:block;font:27px 'Playfair Display',serif;color:var(--pink)}
+.time small{font-size:8px;letter-spacing:2px;color:var(--muted)}
+footer{padding:18px 5%;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid #ffffff12;font-size:10px;letter-spacing:1px;color:var(--muted)}
+#gate{position:fixed;inset:0;z-index:20;background:#08060b;display:grid;place-items:center;text-align:center;padding:24px;transition:.7s}
+#gate.hide{opacity:0;visibility:hidden}
+.gate-box{max-width:510px}
+.gate-box p{color:var(--muted);line-height:1.8}
+#gateMsg{color:var(--pink);min-height:30px;margin-top:16px}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:30;background:var(--pink);color:#170a13;padding:12px 18px;opacity:0;transition:.3s;pointer-events:none}
 #toast.show{opacity:1}
-@media(max-width:760px){.hero-grid{grid-template-columns:1fr}.cover{min-height:350px;max-width:430px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.cards{grid-template-columns:1fr}.hero h1{letter-spacing:-2px}.links{gap:10px}.links a{font-size:9px}section{padding:65px 0}}
-@media(max-width:420px){.gallery{gap:8px}.memory,.placeholder,.memory img{min-height:170px}.placeholder{height:170px}.nav{align-items:flex-start;flex-direction:column;padding:12px 0}}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden}
+.bit{position:absolute;top:-20px;width:8px;height:13px;animation:fall 3s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.1}}
+@media(max-width:700px){header{height:60px}.hero-grid{grid-template-columns:1fr}.cover{min-height:280px}.card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.memory{height:150px}#screen{padding:25px 0}footer{font-size:9px}}
 </style>
 </head>
 <body>
-<div id="confetti"></div>
-<div id="toast"></div>
+<div id="stars"></div><div id="confetti"></div><div id="toast"></div>
+<div id="gate"><div class="gate-box">
+ <div class="pink" style="font-size:40px">✧ 𓆩♡𓆪 ✧</div>
+ <div class="eyebrow">PRIVATE • MARYAM ONLY</div>
+ <h1>Hold on,<br><em>birthday girl.</em></h1>
+ <p>This little universe is for one dramatic, lovable human.<br>Are you Maryam, or are you here to steal the cake?</p>
+ <button class="btn" onclick="enter()">OPEN MY SURPRISE ♡</button>
+ <button class="btn ghost" onclick="nope()">I'm the cake inspector</button>
+ <div id="gateMsg"></div>
+</div></div>
 
-<div id="gate">
- <div class="gate-card">
-  <div class="pink" style="font-size:42px">✧ 𓆩♡𓆪 ✧</div>
-  <div class="eyebrow">PRIVATE COLLECTION • 18 OCTOBER</div>
-  <h1>Wait,<br><em class="pink">stranger.</em></h1>
-  <p>This universe belongs to one special girl. Slightly dramatic. Occasionally annoying. Very loved.</p>
-  <p><b>Are you Maryam?</b> Choose wisely. Our security team is one sleep-deprived friend. 😂</p>
-  <div class="gate-buttons">
-   <button class="btn" onclick="enter()">YES, IT'S ME ♡</button>
-   <button class="btn ghost" onclick="noEntry()">I'm the birthday inspector</button>
-  </div>
-  <div id="gateMsg"></div>
- </div>
+<div id="app">
+<header>
+ <div class="logo">for maryam ♡</div>
+ <div class="progress" id="progress"></div>
+ <div style="font-size:10px;letter-spacing:2px;color:var(--muted)" id="stepLabel">01 / 07</div>
+</header>
+<main id="screen"></main>
+<footer><span>THE MARYAM BIRTHDAY EDITION</span><span>MADE WITH LOVE ♡</span></footer>
 </div>
-
-<nav><div class="nav">
- <a class="logo" href="#home">for maryam ♡</a>
- <div class="links"><a href="#home">HOME</a><a href="#memories">MEMORIES</a><a href="#letter">LETTER</a><a href="#fun">FUN ZONE</a></div>
-</div></nav>
-
-<section class="hero" id="home"><div class="wrap hero-grid">
- <div>
-  <div class="eyebrow">THE BIRTHDAY EDITION • 18 OCTOBER</div>
-  <h1>A little<br>world of<br><em>you.</em></h1>
-  <p>For the girl who turns ordinary moments into memories. This tiny universe is made of friendship, laughter, a little chaos, and all the things I wish for you.</p>
-  <button class="btn" onclick="document.querySelector('#memories').scrollIntoView()">ENTER OUR MEMORY LANE ↘</button>
-  <div class="countdown">
-   <div class="time"><strong id="dd">--</strong><span>DAYS</span></div>
-   <div class="time"><strong id="hh">--</strong><span>HOURS</span></div>
-   <div class="time"><strong id="mm">--</strong><span>MINUTES</span></div>
-   <div class="time"><strong id="ss">--</strong><span>SECONDS</span></div>
-  </div>
-  <div class="muted" id="countLabel" style="font-size:11px">Counting down to your special day ♡</div>
- </div>
- <div class="cover">
-  <div class="cover-top"><span>THE MARYAM ISSUE</span><span>VOL. 018</span></div>
-  <div><div class="cover-title">Rare soul.<br><em>Golden</em><br>heart.</div><div class="star">✷</div></div>
-  <div class="cover-bottom"><span>ONE OF ONE</span><span>EST. OCTOBER 18</span></div>
- </div>
-</div></section>
-
-<section id="memories"><div class="wrap">
- <div class="eyebrow">CHAPTER 01 • OUR ARCHIVE</div>
- <h2>Moments that<br>became <em class="pink">memories.</em></h2>
- <p class="muted">Twenty little windows into our friendship. Replace the sample image paths with your own pictures, and this gallery becomes our story.</p>
- <div class="gallery" id="gallery"></div>
- <p class="photo-note">♡ PHOTO SETUP: create a folder named <b>images</b> next to this HTML file. Put your photos inside it named <b>memory1.jpg</b>, <b>memory2.jpg</b>, and so on. The file extensions must match your actual photos. These pictures will then appear on the published website too.</p>
-</div></section>
-
-<section id="timeline"><div class="wrap">
- <div class="eyebrow">CHAPTER 02 • THE STORY SO FAR</div>
- <h2>Us, in <em class="pink">chapters.</em></h2>
- <div class="cards">
-  <div class="card"><div class="number">01 / The beginning</div><h3>We met.</h3><p>Just two people who had no idea how many laughs, stories and unforgettable moments were waiting ahead.</p></div>
-  <div class="card"><div class="number">02 / The plot twist</div><h3>We became us.</h3><p>Random conversations turned into favourite memories. And somehow, the ordinary became special.</p></div>
-  <div class="card"><div class="number">03 / To be continued</div><h3>Our next era.</h3><p>More adventures, more photos, more birthdays. Our best chapter is still waiting to be written.</p></div>
- </div>
-</div></section>
-
-<section id="letter"><div class="wrap">
- <div class="eyebrow">CHAPTER 03 • SOMETHING FROM MY HEART</div>
- <h2>Dear Maryam, <em class="pink">always.</em></h2>
- <div class="letter">
-  <p>Happy birthday to a girl who deserves beautiful things, gentle days, and a thousand reasons to smile. ♡</p>
-  <p>I hope this new chapter brings you closer to every dream you've quietly kept in your heart. I hope you find peace when life gets loud, courage when things feel difficult, and people who love you for exactly who you are.</p>
-  <p>Thank you for being part of my story. Thank you for the laughs, the random talks, and the memories that make even normal days feel special.</p>
-  <p>Never forget that you matter. Even on the days when you feel tired, lost, or not enough, there is still so much beautiful about you.</p>
-  <p>And yes, you're still annoying. But unfortunately for you, our friendship contract has no cancellation policy. 😂</p>
-  <p class="pink">With love, endless duas, and a little madness,<br>Your favourite human. ♡</p>
- </div>
-</div></section>
-
-<section id="poetry"><div class="wrap">
- <div class="eyebrow">CHAPTER 04 • WORDS FOR YOU</div>
- <h2>A little <em class="pink">poetry.</em></h2>
- <div class="poem">May happiness find you wherever you go,<br>
- May your heart stay warm and your dreams learn to grow.<br>
- May life give you reasons to laugh every day,<br>
- And send a little magic along the way.</div>
- <p class="muted" style="margin-top:25px">Tumhari zindagi khushiyon se roshan rahe. ♡</p>
-</div></section>
-
-<section id="fun"><div class="wrap">
- <div class="eyebrow">CHAPTER 05 • NO SERIOUSNESS ALLOWED</div>
- <h2>The Maryam <em class="pink">department.</em></h2>
- <div class="cards">
-  <div class="card"><div class="number">01 / Friendly fire</div><h3>Roast machine 🔥</h3><p>Scientific research into the rare species known as Maryam.</p><button class="btn ghost" style="margin-top:18px" onclick="roast()">ROAST HER</button><div class="output" id="roast">The results are classified...</div></div>
-  <div class="card"><div class="number">02 / Bestie exam</div><h3>Friendship test</h3><p>Choose your answer. Your friendship reputation is at stake.</p><p style="color:var(--text);margin-top:18px">What keeps a friendship strong?</p><div class="options"><button onclick="quiz(0)">Trust</button><button onclick="quiz(1)">Free food</button><button onclick="quiz(2)">Stealing outfits</button></div><div class="muted" id="quizResult"></div></div>
-  <div class="card"><div class="number">03 / Your reminder</div><h3>Compliment machine ♡</h3><p>For any day you forget how special you are.</p><button class="btn ghost" style="margin-top:18px" onclick="compliment()">MAKE ME SMILE</button><div class="output" id="compliment">Your reminder is waiting...</div></div>
- </div>
-</div></section>
-
-<section id="wishes"><div class="wrap">
- <div class="eyebrow">CHAPTER 06 • A WISH FOR YOUR FUTURE</div>
- <h2>Pick a little <em class="pink">wish.</em></h2>
- <p class="muted">A tiny wish for the year ahead. Choose whichever your heart needs most.</p>
- <div class="interactive"><div class="options">
-  <button onclick="wish('May your biggest dreams find their way to you. ✨')">Dreams ✨</button>
-  <button onclick="wish('May your heart find peace, even on difficult days. ☾')">Peace ☾</button>
-  <button onclick="wish('May genuine love always surround you. ♡')">Love ♡</button>
-  <button onclick="wish('May you find courage for every new beginning. 🌷')">Courage 🌷</button>
- </div><div class="output" id="wishOutput">Your wish will appear here...</div></div>
-</div></section>
-
-<section id="cake"><div class="wrap" style="text-align:center">
- <div class="eyebrow">THE FINAL CHAPTER</div>
- <h2>Make a wish, <em class="pink">birthday girl.</em></h2>
- <p class="muted" style="max-width:520px;margin:0 auto 25px">Close your eyes, make your secret wish, and tap the cake. Your next chapter deserves a little magic.</p>
- <div class="cake" id="cakeIcon" onclick="blowCake()">🎂</div>
- <div class="output" id="cakeMsg">Tap the cake to blow out the candle ♡</div>
- <button class="btn" onclick="finale()">REVEAL YOUR LAST SURPRISE ✧</button>
- <div class="output" id="finalMsg"></div>
-</div></section>
-
-<footer>MADE WITH LOVE, A LITTLE DRAMA & TOO MANY MEMORIES ♡<br><span class="pink">HAPPY BIRTHDAY, MARYAM • OCTOBER 18</span></footer>
-
-<div id="modal" onclick="if(event.target===this)closeModal()"><div class="modal-box"><button class="btn ghost" onclick="closeModal()">CLOSE ×</button><div id="modalBody" style="margin-top:20px"></div></div></div>
 
 <script>
 const captions=[
 "The beginning ♡","Our favourite chaos","A day to remember","My favourite human",
-"Random adventures","The laughter club","A tiny forever memory","Partners in crime",
-"One for the scrapbook","The unplanned days","Our kind of happiness","Pure chaos 😂",
-"Another page of us","The good old days","My safe place ♡","The iconic moment",
-"Just being us","A memory to keep","The next adventure","To more years together"
+"Partners in crime","The laughter club","A forever memory","Unplanned adventures",
+"The iconic moment","Just being us","Our little world","Pure chaos 😂",
+"Another page of us","The good old days","My safe place","Main character energy",
+"One for the scrapbook","The plot twist","To more memories","Always us ♡"
 ];
-const gallery=document.getElementById('gallery');
-captions.forEach((caption,i)=>{
- const card=document.createElement('div');card.className='memory';
- const img=document.createElement('img');
- img.src='images/memory'+(i+1)+'.jpg';
- img.alt=caption;
- img.onerror=function(){this.style.display='none';};
- const placeholder=document.createElement('div');placeholder.className='placeholder';
- placeholder.innerHTML='<div><span>✧</span><small>MEMORY '+String(i+1).padStart(2,'0')+'<br>ADD YOUR PHOTO</small></div>';
- const label=document.createElement('div');label.className='memory-label';
- label.innerHTML='<small>MEMORY '+String(i+1).padStart(2,'0')+'</small>';
- label.appendChild(document.createTextNode(caption));
- card.append(img,placeholder,label);
- img.onload=()=>{placeholder.style.display='none';};
- card.onclick=()=>openMemory(img,caption,i);
- gallery.appendChild(card);
-});
-function openMemory(img,caption,i){
- const body=document.getElementById('modalBody');body.innerHTML='';
- if(img.naturalWidth>0){const big=document.createElement('img');big.src=img.src;big.alt=caption;body.appendChild(big);}
- else {const symbol=document.createElement('div');symbol.style.fontSize='60px';symbol.textContent='♡';body.appendChild(symbol);}
- const h=document.createElement('h2');h.className='serif pink';h.textContent=caption;
- const p=document.createElement('p');p.className='muted';p.textContent=img.naturalWidth>0?'A little memory, forever yours.':'Add images/memory'+(i+1)+'.jpg to show your photo here.';
- body.append(h,p);document.getElementById('modal').classList.add('show');
+let current=0, cakeBlown=false;
+const screen=document.getElementById('screen');
+const pages=[
+function(){return `
+<div class="screen-content hero-grid">
+ <div><div class="eyebrow">18 OCTOBER • YOUR SPECIAL EDITION</div>
+ <h1>A little<br>world of<br><em>you.</em></h1>
+ <p class="muted">For the girl who turns ordinary moments into memories. This tiny universe is made of friendship, laughter, and a little chaos.</p>
+ <div class="countdown"><div class="time"><strong id="dd">--</strong><small>DAYS</small></div><div class="time"><strong id="hh">--</strong><small>HOURS</small></div><div class="time"><strong id="mm">--</strong><small>MINUTES</small></div><div class="time"><strong id="ss">--</strong><small>SECONDS</small></div></div>
+ <p class="muted" style="font-size:11px">A surprise made especially for you ♡</p>
+ <div class="actions right"><button class="btn" onclick="go(1)">BEGIN OUR STORY →</button></div></div>
+ <div class="cover"><div class="cover-foot"><span>THE MARYAM ISSUE</span><span>VOL. 018</span></div><div class="cover-title">Rare soul.<br><em>Golden</em><br>heart.</div><div style="font-size:80px;text-align:center;color:var(--pink)">✷</div><div class="cover-foot"><span>ONE OF ONE</span><span>OCTOBER 18</span></div></div>
+</div>`},
+function(){return `<div class="screen-content"><div class="eyebrow">CHAPTER 01 • THE ARCHIVE</div><h2>Our little<br><em>museum.</em></h2><p class="muted">Twenty windows into our friendship. Click a photo to open it. Add your pictures in the images folder.</p><div class="card-grid" id="gallery"></div><p class="muted" style="font-size:11px;margin-top:16px">Photo files: images/memory1.jpg through images/memory20.jpg</p><div class="actions"><button class="btn ghost" onclick="go(0)">← BACK</button><button class="btn" onclick="go(2)">NEXT: OUR VIDEO →</button></div></div>`},
+function(){return `<div class="screen-content center"><div class="eyebrow">CHAPTER 02 • OUR SPECIAL MOMENT</div><h2>A memory that<br><em>moves.</em></h2><p class="muted">Some memories deserve more than a picture. They deserve to be played again.</p><div class="media-frame"><video id="specialVideo" controls playsinline preload="metadata" poster="images/video-cover.jpg"><source src="videos/special-moment.mp4" type="video/mp4">Your browser cannot play this video.</video><div class="video-caption"><span>✧ OUR SPECIAL MOMENT</span><span>PRESS PLAY ♡</span></div></div><p class="muted" style="font-size:11px">Put your video at videos/special-moment.mp4. Use MP4 format for best compatibility.</p><div class="actions"><button class="btn ghost" onclick="go(1)">← BACK TO MEMORIES</button><button class="btn" onclick="go(3)">NEXT: OUR STORY →</button></div></div>`},
+function(){return `<div class="screen-content"><div class="eyebrow">CHAPTER 03 • TO BE CONTINUED</div><h2>Us, in <em>chapters.</em></h2><div class="card-grid" style="grid-template-columns:repeat(3,minmax(0,1fr))"><article><div class="pink">01 / BEGINNING</div><h3>The day we met.</h3><p class="muted">Two people who had no idea how many memories were waiting ahead.</p></article><article><div class="pink">02 / PLOT TWIST</div><h3>We became us.</h3><p class="muted">Random talks turned into favourite moments. Ordinary days became special.</p></article><article><div class="pink">03 / NEXT ERA</div><h3>Still writing.</h3><p class="muted">More adventures, more laughter, and stories we will tell for years.</p></article></div><div class="actions"><button class="btn ghost" onclick="go(2)">← BACK</button><button class="btn" onclick="go(4)">NEXT: YOUR LETTER →</button></div></div>`},
+function(){return `<div class="screen-content"><div class="eyebrow">CHAPTER 04 • FROM MY HEART</div><h2>Dear Maryam,<br><em>always.</em></h2><div class="letter"><p>Happy birthday to a girl who deserves beautiful things, gentle days, and a thousand reasons to smile. ♡</p><p>I hope this new chapter brings you closer to every dream you quietly keep in your heart. May you find peace when life gets loud, courage when things feel difficult, and people who love you for exactly who you are.</p><p>Thank you for being part of my story. Thank you for the laughs, the random talks, and the memories that make normal days special.</p><p>And yes, you're still annoying. But our friendship contract has no cancellation policy. 😂</p><p class="pink">With love, endless duas, and a little madness,<br>Your favourite human ♡</p></div><div class="actions"><button class="btn ghost" onclick="go(3)">← BACK</button><button class="btn" onclick="go(5)">NEXT: FUN ZONE →</button></div></div>`},
+function(){return `<div class="screen-content"><div class="eyebrow">CHAPTER 05 • NO SERIOUSNESS ALLOWED</div><h2>The Maryam<br><em>department.</em></h2><div class="card-grid" style="grid-template-columns:repeat(3,minmax(0,1fr))"><div><h3>Friendly fire 🔥</h3><button class="btn ghost" onclick="roast()">ROAST HER</button><div class="output" id="roastOut">Classified results...</div></div><div><h3>Friendship test</h3><p class="muted">What keeps friendship strong?</p><div class="options"><button onclick="quiz(0)">Trust</button><button onclick="quiz(1)">Free food</button><button onclick="quiz(2)">Stealing clothes</button></div><div class="muted" id="quizOut"></div></div><div><h3>Compliment machine ♡</h3><button class="btn ghost" onclick="compliment()">MAKE ME SMILE</button><div class="output" id="compOut">A reminder is waiting...</div></div></div><div class="actions"><button class="btn ghost" onclick="go(4)">← BACK</button><button class="btn" onclick="go(6)">FINAL SURPRISE →</button></div></div>`},
+function(){return `<div class="screen-content center"><div class="eyebrow">CHAPTER 06 • THE GRAND FINALE</div><h2>Make a wish,<br><em>birthday girl.</em></h2><p class="muted">Close your eyes. Make a secret wish. Tap the cake to blow out the candle.</p><div class="cake" id="cake" onclick="blow()">🎂</div><div class="output" id="cakeOut">One candle. One wish. Endless possibilities. ♡</div><button class="btn" onclick="finale()">REVEAL YOUR LAST MESSAGE ✧</button><div class="letter" id="finalLetter" style="display:none"><p>Maryam, may this year bring you happiness that stays, love that feels safe, and beautiful moments you never expected. May your dreams grow bigger and your heart stay soft.</p><p class="pink">Happy birthday, meri dost. You are loved more than words can say. ♡</p></div><div class="actions"><button class="btn ghost" onclick="go(5)">← BACK</button><button class="btn" onclick="go(0)">REPLAY OUR STORY ↻</button></div></div>`}
+];
+function render(){
+ screen.innerHTML=pages[current]();
+ screen.style.animation='none';void screen.offsetWidth;screen.style.animation='appear .55s ease';
+ document.getElementById('stepLabel').textContent=String(current+1).padStart(2,'0')+' / 07';
+ document.getElementById('progress').innerHTML=pages.map((_,i)=>'<span class="dot '+(i===current?'active':'')+'"></span>').join('');
+ if(current===1)makeGallery();
+ if(current===0)countdown();
 }
-function closeModal(){document.getElementById('modal').classList.remove('show')}
+function go(n){current=n;render();window.scrollTo(0,0)}
 function enter(){document.getElementById('gate').classList.add('hide');confetti()}
-const gateMessages=["FBI? Your badge says 'professional cake thief'. 😂","Access denied. Bribe us with chocolate.","Maryam's security team is one dramatic friend.","Nice try. Birthday police have been informed. 🚨"];
-function noEntry(){document.getElementById('gateMsg').textContent=gateMessages[Math.floor(Math.random()*gateMessages.length)]}
+function nope(){document.getElementById('gateMsg').textContent=["FBI? Your badge says cake thief. 😂","Access denied. Bribe us with chocolate.","Maryam's security team has been notified. (It's one friend.)"][Math.floor(Math.random()*3)]}
+function makeGallery(){
+ const g=document.getElementById('gallery');if(!g)return;
+ captions.forEach((caption,i)=>{
+  const card=document.createElement('div');card.className='memory';
+  const img=document.createElement('img');img.src='images/memory'+(i+1)+'.jpg';img.alt=caption;
+  const empty=document.createElement('div');empty.className='empty';empty.innerHTML='✧<small>MEMORY '+String(i+1).padStart(2,'0')+'</small>';
+  img.onerror=()=>img.style.display='none';img.onload=()=>empty.style.display='none';
+  const label=document.createElement('div');label.className='label';label.textContent=caption;
+  card.append(img,empty,label);card.onclick=()=>openPhoto(img,caption,i);g.appendChild(card);
+ });
+}
+function openPhoto(img,caption,i){
+ const w=window.open('','_blank');
+ if(!w){alert(caption+' — '+(img.naturalWidth?'Photo loaded':'Add images/memory'+(i+1)+'.jpg to show this photo.'));return}
+ w.document.write('<title>'+caption+'</title><body style="margin:0;background:#08060b;color:#fff;text-align:center;font-family:Georgia;padding:20px"><h2>'+caption+'</h2>'+(img.naturalWidth?'<img style="max-width:95%;max-height:80vh" src="'+img.src+'">':'<p>Add images/memory'+(i+1)+'.jpg to display this photo.</p>')+'</body>');
+}
 function countdown(){
- const now=new Date();let target=new Date(now.getFullYear(),9,18);
- if(now>new Date(target.getFullYear(),9,18,23,59,59))target=new Date(now.getFullYear()+1,9,18);
- let d=target-now;
- document.getElementById('dd').textContent=Math.floor(d/86400000);
- document.getElementById('hh').textContent=Math.floor(d%86400000/3600000);
- document.getElementById('mm').textContent=Math.floor(d%3600000/60000);
- document.getElementById('ss').textContent=Math.floor(d%60000/1000);
- document.getElementById('countLabel').textContent=now.getMonth()===9&&now.getDate()===18?'IT IS YOUR DAY, MARYAM! HAPPY BIRTHDAY ♡':'Counting down to October 18 • just for you';
+ const now=new Date();let t=new Date(now.getFullYear(),9,18);
+ if(now>new Date(now.getFullYear(),9,18,23,59,59))t=new Date(now.getFullYear()+1,9,18);
+ const d=t-now;const vals=[Math.floor(d/86400000),Math.floor(d%86400000/3600000),Math.floor(d%3600000/60000),Math.floor(d%60000/1000)];
+ ['dd','hh','mm','ss'].forEach((id,i)=>{const e=document.getElementById(id);if(e)e.textContent=vals[i]});
 }
-countdown();setInterval(countdown,1000);
-const roasts=["Maryam says '2 minutes' and arrives in the next calendar year. 😂","Her screen time needs its own university degree.","She can turn one small story into a 12-season drama.","Overthinking? No. She runs a 24/7 investigation agency.","Limited edition human. Warranty not included.","Main character energy, background character punctuality."];
-function roast(){document.getElementById('roast').textContent=roasts[Math.floor(Math.random()*roasts.length)]}
-const compliments=["You make ordinary days feel special. ♡","You deserve the kindness you give others.","Your laugh makes the world a little lighter.","You are allowed to grow at your own pace.","You are loved more than you probably realise.","Never dim your light to fit someone else's world. ✨"];
-function compliment(){document.getElementById('compliment').textContent=compliments[Math.floor(Math.random()*compliments.length)]}
-function quiz(n){document.getElementById('quizResult').textContent=n===0?'Correct! Trust is the real foundation. Snacks are a bonus. ♡':n===1?'Food is important, but trust comes first. 😂':'Borrowing clothes is a tradition, not the foundation. 😭'}
-function wish(t){document.getElementById('wishOutput').textContent=t}
-let blown=false;
-function blowCake(){blown=!blown;document.getElementById('cakeIcon').textContent=blown?'🍰':'🎂';document.getElementById('cakeMsg').textContent=blown?'Wish sent to the universe. May beautiful things find you. ✨':'Candle relit! Make another wish. ♡';if(blown)confetti()}
-function confetti(){
- const holder=document.getElementById('confetti'),colors=['#f3a5c7','#bba5ff','#fff0f7','#e7c47a'];
- for(let i=0;i<90;i++){const b=document.createElement('div');b.className='bit';b.style.left=Math.random()*100+'%';b.style.background=colors[Math.floor(Math.random()*colors.length)];b.style.animationDelay=Math.random()*1.2+'s';b.style.animationDuration=2+Math.random()*2+'s';holder.appendChild(b);setTimeout(()=>b.remove(),5000)}
-}
-function finale(){confetti();document.getElementById('finalMsg').textContent='Maryam, may this year bring you the kind of happiness that stays, the love that feels safe, and memories we will laugh about for years. Happy birthday, meri dost. ♡'}
+setInterval(()=>{if(current===0)countdown()},1000);
+function roast(){const a=["She says two minutes and arrives next calendar year. 😂","Her screen time needs its own degree.","One small story becomes a twelve-season drama.","Overthinking? She runs an investigation agency.","Main character energy, background character punctuality."];const e=document.getElementById('roastOut');if(e)e.textContent=a[Math.floor(Math.random()*a.length)]}
+function quiz(n){const e=document.getElementById('quizOut');if(e)e.textContent=n===0?'Correct! Trust first, snacks second. ♡':n===1?'Snacks are important, but trust comes first. 😂':'Borrowing clothes is tradition, not the foundation. 😭'}
+function compliment(){const a=["You make ordinary days feel special. ♡","You deserve the kindness you give others.","Your laugh makes the world lighter.","You are allowed to grow at your own pace.","Never dim your light for anyone. ✨"];const e=document.getElementById('compOut');if(e)e.textContent=a[Math.floor(Math.random()*a.length)]}
+function blow(){cakeBlown=!cakeBlown;const e=document.getElementById('cake');if(e)e.textContent=cakeBlown?'🍰':'🎂';const m=document.getElementById('cakeOut');if(m)m.textContent=cakeBlown?'Wish sent to the universe. May beautiful things find you. ✨':'Your candle is back! Make another wish. ♡';if(cakeBlown)confetti()}
+function finale(){confetti();const e=document.getElementById('finalLetter');if(e)e.style.display='block';const m=document.getElementById('cakeOut');if(m)m.textContent='HAPPY BIRTHDAY, MARYAM! ♡'}
+function confetti(){const c=document.getElementById('confetti'),colors=['#f2a4c7','#c4a8ff','#fff5fb','#e7c47a'];for(let i=0;i<90;i++){const b=document.createElement('i');b.className='bit';b.style.left=Math.random()*100+'%';b.style.background=colors[Math.floor(Math.random()*colors.length)];b.style.animationDelay=Math.random()+'s';c.appendChild(b);setTimeout(()=>b.remove(),4500)}}
+render();
 </script>
 </body>
 </html>
