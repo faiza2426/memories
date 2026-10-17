@@ -165,5 +165,145 @@ function finale(){confetti();const e=document.getElementById('finalLetter');if(e
 function confetti(){const c=document.getElementById('confetti'),colors=['#f2a4c7','#c4a8ff','#fff5fb','#e7c47a'];for(let i=0;i<90;i++){const b=document.createElement('i');b.className='bit';b.style.left=Math.random()*100+'%';b.style.background=colors[Math.floor(Math.random()*colors.length)];b.style.animationDelay=Math.random()+'s';c.appendChild(b);setTimeout(()=>b.remove(),4500)}}
 render();
 </script>
+ 
+<!-- GRAND CELEBRATION BUTTON -->
+<button id="grandStart" onclick="startGrandCelebration()"
+style="display:block;margin:24px auto;padding:16px 28px;border:1px solid #e9c878;
+border-radius:40px;background:linear-gradient(135deg,#f7dca0,#b98536);
+color:#171019;font-weight:800;letter-spacing:1px;cursor:pointer;font-size:15px;">
+  🎂 START THE GRAND CELEBRATION
+</button>
+
+<!-- CELEBRATION OVERLAY -->
+<div id="grandParty" style="display:none;position:fixed;inset:0;z-index:99999;
+background:radial-gradient(ellipse at top,#42213d,#100d18 65%,#050508);
+color:#fff;text-align:center;overflow:auto;padding:30px 18px;
+font-family:Georgia,serif;">
+
+  <button onclick="document.getElementById('grandParty').style.display='none'"
+  aria-label="Close celebration"
+  style="position:fixed;top:16px;right:18px;background:#ffffff15;color:white;
+  border:1px solid #ffffff44;border-radius:50%;width:42px;height:42px;
+  font-size:22px;cursor:pointer;">×</button>
+
+  <div style="font-size:14px;letter-spacing:5px;color:#f1cf86;margin-top:36px">
+    TONIGHT IS ALL ABOUT YOU
+  </div>
+
+  <h1 style="font-size:clamp(38px,8vw,76px);line-height:1.05;
+  color:#f4d18b;text-shadow:0 0 35px #e6a9ff66;margin:25px 0;">
+    HAPPY BIRTHDAY<br>MARYAM ✨
+  </h1>
+
+  <div id="partyCake" onclick="partyExplosion()"
+  style="font-size:100px;cursor:pointer;filter:drop-shadow(0 0 22px #ffb9e7);
+  animation:cakeFloat 2s ease-in-out infinite;">
+    🎂
+  </div>
+
+  <p style="color:#f5d8eb;font-size:17px;line-height:1.8;max-width:570px;
+  margin:20px auto;">
+    Aaj tumhari birthday hai, is liye aaj tumhari saari complaints,
+    nakhray aur extra attitude officially maaf. Kal se phir tumhari class lagegi. 😂
+  </p>
+
+  <button onclick="partyExplosion()"
+  style="padding:14px 24px;border-radius:30px;background:#f5d28e;color:#20121d;
+  border:0;font-weight:bold;cursor:pointer;margin:8px;">
+    ✨ MAKE SOME NOISE
+  </button>
+
+  <button onclick="revealRoast()"
+  style="padding:14px 24px;border-radius:30px;background:#ffffff12;color:white;
+  border:1px solid #e7b5d6;cursor:pointer;margin:8px;">
+    🙄 UNLOCK YOUR ROAST
+  </button>
+
+  <div id="roastMessage" style="display:none;max-width:500px;margin:25px auto;
+  padding:22px;border:1px solid #d9ad68;border-radius:18px;background:#ffffff09;
+  color:#ffe3b4;font-size:20px;line-height:1.6;">
+    Maryam, tum best friend ho ya full-time headache? 😂
+    <br>Khair, tumhari jagah koi nahi le sakta. Ab zyada khush mat hona! 🖤
+  </div>
+
+  <div style="margin:45px auto 15px;color:#e9c6dc;letter-spacing:2px;">
+    ONE LAST THING...
+  </div>
+
+  <button onclick="revealLove()"
+  style="padding:15px 25px;border-radius:30px;background:linear-gradient(135deg,#f4d08d,#d89bc8);
+  color:#24121e;border:0;font-weight:bold;cursor:pointer;">
+    💌 OPEN YOUR FINAL SURPRISE
+  </button>
+
+  <div id="finalLetter" style="display:none;max-width:580px;margin:25px auto 45px;
+  padding:25px;border-radius:18px;border:1px solid #e5c28c;
+  background:#ffffff09;line-height:1.9;color:#fff0f8;font-size:18px;">
+    <h2 style="color:#f4d18b">For My Maryam 🖤</h2>
+    Har dosti perfect nahi hoti, lekin kuch dost dil ke bohat qareeb ho jatay hain.
+    Tumhari hasi, tumhari baatein aur hamari memories meri story ka special part hain.
+    <br><br>
+    Meri dua hai tumhari zindagi khushiyon, kamyabiyon aur un tamam cheezon se bhar jaye
+    jo tumhara dil chahta hai.
+    <br><br>
+    <i>"Dosti ka rishta lafzon ka mohtaj nahi hota,<br>
+    kuch logon ka hona hi zindagi ko khoobsurat bana deta hai."</i>
+    <br><br>
+    Happy Birthday once again, drama queen. 😂🎂<br>
+    <span style="color:#f4d18b">Always stay special. ✨</span>
+  </div>
+
+  <p style="font-size:12px;color:#bba8b9;margin-top:35px">
+    MADE WITH LOVE, MEMORIES & A LITTLE BIT OF ROASTING 🖤
+  </p>
+</div>
+
+<style>
+@keyframes cakeFloat {
+  0%,100% { transform:translateY(0) rotate(-3deg); }
+  50% { transform:translateY(-12px) rotate(3deg); }
+}
+.grand-spark {
+  position:fixed;top:-20px;z-index:100000;pointer-events:none;
+  animation:grandFall linear forwards;
+}
+@keyframes grandFall {
+  to { transform:translateY(110vh) rotate(800deg);opacity:0; }
+}
+</style>
+
+<script>
+function startGrandCelebration() {
+  document.getElementById('grandParty').style.display = 'block';
+  partyExplosion();
+}
+
+function partyExplosion() {
+  const symbols = ['✨','🎉','💖','🌟','🎊','💕','🥳','⭐'];
+  for (let i=0;i<90;i++) {
+    const s=document.createElement('span');
+    s.className='grand-spark';
+    s.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    s.style.left=Math.random()*100+'vw';
+    s.style.animationDuration=(2+Math.random()*4)+'s';
+    s.style.fontSize=(14+Math.random()*20)+'px';
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),6500);
+  }
+}
+
+function revealRoast() {
+  document.getElementById('roastMessage').style.display='block';
+  partyExplosion();
+}
+
+function revealLove() {
+  document.getElementById('finalLetter').style.display='block';
+  document.getElementById('finalLetter').scrollIntoView({
+    behavior:'smooth',block:'center'
+  });
+  partyExplosion();
+}
+</script>
 </body>
 </html>
